@@ -1514,6 +1514,8 @@ http://udonfooddelivery.xyz/backend/apicustomer/insertcustomer2
     "username": "c06",
     "password": "123456",
     "iduserface":  "6414654" ,
+     "toketface":"266262626",
+        "iduserface": "54545"
 }
   
 ```
@@ -1680,8 +1682,7 @@ http://udonfooddelivery.xyz/backend/apiupdatecustomer/updatecustomer?id=4
     "username": "c06",
     "password": "123456",
     "type": "ลูกค้า",
-    "toketface":"266262626",
-    "iduserface": "54545"
+   
 }
   
 ```

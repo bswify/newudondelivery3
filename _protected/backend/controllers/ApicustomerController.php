@@ -60,6 +60,7 @@ class ApicustomerController extends Controller
             $cus->CPasswords = $request->getBodyParam('password');
             $cus->LoginType =   "ลูกค้า";
             $cus->iduserface = $request->getBodyParam('iduserface');
+            $cus->toketface = $request->getBodyParam('toketface');
             if ($cus->validate()) {
                 file_put_contents(Yii::getAlias('@UploadCus') . $filename, base64_decode($param));
                 $cus->save();

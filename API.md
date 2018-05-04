@@ -1679,7 +1679,9 @@ http://udonfooddelivery.xyz/backend/apiupdatecustomer/updatecustomer?id=4
     "phone": "024-563-3893",
     "username": "c06",
     "password": "123456",
-    "type": "ลูกค้า"
+    "type": "ลูกค้า",
+    "toketface":"266262626",
+    "iduserface": "54545"
 }
   
 ```

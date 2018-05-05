@@ -44,6 +44,8 @@ class ApicustomerController extends Controller
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
         $cus = new Customer();
+        $dd = Yii::$app->request->post();
+        $d = array($dd);
         $request = Yii::$app->request;
 //        $cus->scenario = Customer::SCENARIO_CREATE;
         $cus->attributes = \Yii::$app->request->post();
@@ -66,9 +68,10 @@ class ApicustomerController extends Controller
             $to =$request->getBodyParam('token');
             $userf = $request->getBodyParam('iduserface');
             $usern =$request->getBodyParam('username');
+//            return d;
             if($to == null){
                 $sql = new Query();
-                $sql->select('*')->from('customer')->where('CUsername = "'.$usern.'""');
+                $sql->select('*')->from('customer')->where('CUsername = "'.$usern.'"');
                 $command11 = $sql->createCommand();
                 $data = $command11->queryAll();
                 if (count($data) == 0){
@@ -85,7 +88,7 @@ class ApicustomerController extends Controller
 
             }else{
                 $sql2 = new Query();
-                $sql2->select('*')->from('customer')->where('iduserface = '.$userf);
+                $sql2->select('*')->from('customer')->where('iduserface = "'.$userf.'"');
                 $command = $sql2->createCommand();
                 $data2 = $command->queryAll();
                 if(count($data2)==0){

@@ -48,7 +48,7 @@
 | [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
 | [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
 | [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
-| [/apicustomer/customerlogin](#customer_post) | POST | เลูกค้าข้าสูระบบ |
+| [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
 | 
 
 <div class="page-break" />

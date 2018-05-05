@@ -48,6 +48,7 @@
 | [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
 | [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
 | [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
+| [/apicustomer/customerlogin](#customer_post) | POST | เลูกค้าข้าสูระบบ |
 | 
 
 <div class="page-break" />
@@ -1514,7 +1515,7 @@ http://udonfooddelivery.xyz/backend/apicustomer/insertcustomer2
     "username": "c06",
     "password": "123456",
     "iduserface":  "6414654" ,
-     "toketface":"266262626",
+     "toketface":"266262626"
 
 }
   
@@ -2646,6 +2647,58 @@ http://udonfooddelivery.xyz/backend/apilistcustomer/listcustomer?id=1
             "CUsername": "c01",
             "CPasswords": "123456",
             "LoginType": "ลูกค้า"
+        }
+    ]
+}
+```
+
+<div class="page-break" />
+
+<div id="customerlogin_post">
+
+###  customer (POST)
+
+| Attribute   | Description |
+| ----------- | ----------- |
+| URL         | apicustomer/customerlogin  |
+| HTTP METHOD | POST         |
+####  Request example
+```json
+http://udonfooddelivery.xyz/backend/apicustomer/customerlogin
+```
+
+####  Request example
+```json
+{
+	"username": null,
+	"pass" : "12346",
+	"iduserface": "1",
+	"token" : "1551515"
+}
+  
+```
+
+####  Response example (Success)
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "name": {
+                "IDCustomer": "15",
+                "CustomerFName": "kmniji",
+                "CustomerLName": "ddsvdsvd",
+                "CustomerImage": "http://udonfooddelivery.xyz/uploads/images/Customer/kmniji2018-05-05_12-23-26.png",
+                "CustomerPoint": "0",
+                "CustomerPhone": "024-563-3893",
+                "CUsername": "dokdofk",
+                "CPasswords": "123456",
+                "LoginType": "ลูกค้า",
+                "email": null,
+                "iduserface": "1",
+                "token": "1551515"
+            },
+            "address": []
         }
     ]
 }

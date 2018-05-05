@@ -38,7 +38,7 @@ class Customer extends \yii\db\ActiveRecord
     {
         return [
 
-            [[ 'CUsername', 'CPasswords', 'LoginType','email','iduserface','toketface'], 'string'],
+            [[ 'CUsername', 'CPasswords', 'LoginType','email','iduserface','token'], 'string'],
             [['CustomerPoint'], 'integer'],
             [['CustomerFName', 'CustomerLName'], 'string', 'max' => 255],
             [

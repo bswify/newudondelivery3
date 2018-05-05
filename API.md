@@ -2685,20 +2685,91 @@ http://udonfooddelivery.xyz/backend/apicustomer/customerlogin
     "data": [
         {
             "name": {
-                "IDCustomer": "15",
-                "CustomerFName": "kmniji",
-                "CustomerLName": "ddsvdsvd",
-                "CustomerImage": "http://udonfooddelivery.xyz/uploads/images/Customer/kmniji2018-05-05_12-23-26.png",
-                "CustomerPoint": "0",
-                "CustomerPhone": "024-563-3893",
-                "CUsername": "dokdofk",
+                "IDCustomer": "1",
+                "CustomerFName": "nopparut",
+                "CustomerLName": "yasataro",
+                "CustomerImage": "http://udonfooddelivery.xyz/uploads/images/Customer/girl.png",
+                "CustomerPoint": "15",
+                "CustomerPhone": "025-836-9140",
+                "CUsername": "c01",
                 "CPasswords": "123456",
                 "LoginType": "ลูกค้า",
-                "email": null,
-                "iduserface": "1",
-                "token": "1551515"
+                "email": "noppakit15@gmail.com",
+                "iduserface": null,
+                "token": null
             },
-            "address": []
+            "address": [
+                {
+                    "IDCustomerAddress": "5",
+                    "CustomerAddNo": "215",
+                    "CustomerAddRoad": "ทหาร",
+                    "IDCustomer": "1",
+                    "map": null
+                },
+                {
+                    "IDCustomerAddress": "6",
+                    "CustomerAddNo": "557",
+                    "CustomerAddRoad": "โพศรี",
+                    "IDCustomer": "1",
+                    "map": null
+                },
+                {
+                    "IDCustomerAddress": "8",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "9",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "10",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "11",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "12",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "13",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "14",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                },
+                {
+                    "IDCustomerAddress": "15",
+                    "CustomerAddNo": null,
+                    "CustomerAddRoad": null,
+                    "IDCustomer": "1",
+                    "map": "0,0"
+                }
+            ]
         }
     ]
 }

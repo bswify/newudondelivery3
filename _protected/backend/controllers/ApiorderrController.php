@@ -2,8 +2,10 @@
 
 namespace backend\controllers;
 
+use backend\models\Customer;
 use backend\models\Customeraddress;
 use backend\models\Delivery;
+use backend\models\Deliverypro;
 use backend\models\Orderdetails;
 use backend\models\Orders;
 use Yii;
@@ -36,6 +38,24 @@ class ApiorderrController extends Controller
     }
 
 
+    protected function findModel($id)
+    {
+        if (($model = Customer::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function findModel2($id)
+    {
+        if (($model2 = Deliverypro::findOne($id)) !== null) {
+            return $model2;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
 
     public function actionInsertorderr()
     {
@@ -47,6 +67,7 @@ class ApiorderrController extends Controller
         $request = Yii::$app->request;
 
 
+
         $order = new Orders();
         $order->attributes = \Yii::$app->request->post();
 
@@ -54,6 +75,12 @@ class ApiorderrController extends Controller
         $delivery = new Delivery();
         $delivery->attributes = \Yii::$app->request->post();
         $CusAddress = new Customeraddress();
+        $id = Yii::$app->request->getBodyParam('mCustomerId');
+        $cus = $this->findModel($id);
+        $cus->attributes = \Yii::$app->request->post();
+
+
+        $sql2 = new Query();
 
         if (Yii::$app->request->post()) {
 
@@ -87,7 +114,19 @@ class ApiorderrController extends Controller
             $delivery->IDOrder = $order->IDOrder;
             $delivery->DeliveryPrice = $request->getBodyParam('mDeliveryFee');
             $delivery->IDDeliveryTime = $request->getBodyParam('mDeliveryTimeId');
-            $delivery->IDDeliveryPro = null;
+            $depro = $request->getBodyParam('mPromotionId');
+            if($depro !== null){
+                $delivery->IDDeliveryPro = $request->getBodyParam('mPromotionId');
+
+                $depo = $this->findModel2($request->getBodyParam('mPromotionId'));
+                $depo->attributes = \Yii::$app->request->post();
+                $cus->CustomerPoint = $cus->CustomerPoint - $depo->DeliveryProPiont ;
+
+            }else{
+                $delivery->IDDeliveryPro = null;
+            }
+
+//            $delivery->IDDeliveryPro = null;
             $delivery->save();
 
             $data = $request->getBodyParam('mItems');
@@ -114,6 +153,7 @@ class ApiorderrController extends Controller
 
             if ($order->validate()&& $orderDetail->validate()&& $delivery->validate()) {
 //                $order->save();
+                $cus->save();
                 return array('status' => true, 'data' => 'Orders create successfully.');
             } else {
                 return array('status' => false, 'data' => $order->getErrors(),'date2'=>$delivery->getErrors(),'data4'=>$orderDetail->getErrors());

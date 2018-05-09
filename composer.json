@@ -35,7 +35,8 @@
         "kartik-v/yii2-date-range": "*",
         "kalyabin/yii2-select-google-map-location": "*",
         "kolyunya/yii2-map-input-widget": "^1.2",
-        "voime/yii2-google-maps": "*"
+        "voime/yii2-google-maps": "*",
+        "phpoffice/phpexcel": "^1.8"
 
     },
     "require-dev": {

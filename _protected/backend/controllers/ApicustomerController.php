@@ -54,8 +54,10 @@ class ApicustomerController extends Controller
             $param = $request->getBodyParam('img');
             $filename = $request->getBodyParam('fname').date("Y-m-d_H-i-s") . '.png';
 
-            $cus->CustomerFName = $request->getBodyParam('fname');
-            $cus->CustomerLName = $request->getBodyParam('lname');
+//            $cus->CustomerFName = $request->getBodyParam('fname');
+//            $cus->CustomerLName = $request->getBodyParam('lname');
+            $cus->CustomerFName = $request->getBodyParam('username');
+            $cus->CustomerLName = $request->getBodyParam('username');
             $cus->CustomerImage = $filename ;
             $cus->CustomerPoint = 0;
             $cus->CustomerPhone = $request->getBodyParam('phone');

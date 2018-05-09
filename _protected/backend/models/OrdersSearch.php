@@ -41,7 +41,8 @@ class OrdersSearch extends Orders
      */
     public function search($params)
     {
-        $query = Orders::find();
+        $query = Orders::find()->orderBy('IDOrder desc');
+//        $query= Orders::findBySql('SELECT * FROM orders ORDER BY IDOrder DESC ')->all();
 
         // add conditions that should always apply here
 

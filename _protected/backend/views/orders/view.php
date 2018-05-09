@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'method' => 'post',
         ],
     ]) ?>
-    <?= Html::a('จัดส่งแล้ว', ['status4', 'id' => $model->IDOrder], [
+    <?= Html::a('จัดส่งแล้ว', ['status4', 'id' => $model->IDOrder,'idc'=> $model->IDCustomer], [
         'class' => 'btn btn-primary',
         'data' => [
             'confirm' => 'คุณแน่ใจว่าต้องการ จัดส่งแล้ว?',

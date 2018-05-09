@@ -200,7 +200,13 @@ class ApifavoritemenuController extends Controller
 
 
 
-        return array('success' => true, 'data' => $re);
+        $model = Favoritemenu::find()->where(['IDCustomer' => $id])->one();
+        if( $model !== null){
+            return array('success' => true, 'data' => $re);
+        }else{
+            return array('success' => true, 'data' => null);
+        }
+
     }
 
 }

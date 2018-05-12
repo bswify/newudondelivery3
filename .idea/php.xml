@@ -128,6 +128,7 @@
       <path value="$PROJECT_DIR$/_protected/vendor/kalyabin/yii2-select-google-map-location" />
       <path value="$PROJECT_DIR$/_protected/vendor/kolyunya/yii2-map-input-widget" />
       <path value="$PROJECT_DIR$/_protected/vendor/voime/yii2-google-maps" />
+      <path value="$PROJECT_DIR$/_protected/vendor/phpoffice/phpexcel" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

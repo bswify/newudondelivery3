@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('พิมพ์รายงาน', ['pdf2'], ['class' => 'btn btn-danger']) ?>
+        <?= Html::a('พิมพ์รายงาน', ['excel'], ['class' => 'btn btn-danger']) ?>
 <!--        <= Html::a('Create Orders', ['create'], ['class' => 'btn btn-success']) ?>-->
     </p>
 

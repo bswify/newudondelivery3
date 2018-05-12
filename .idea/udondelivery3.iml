@@ -87,6 +87,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpoffice/phpexcel" />
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpspec/php-diff" />
       <excludeFolder url="file://$MODULE_DIR$/_protected/vendor/phpspec/prophecy" />

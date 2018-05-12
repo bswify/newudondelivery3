@@ -117,7 +117,6 @@ class ApiorderrController extends Controller
             $depro = $request->getBodyParam('mPromotionId');
             if($depro !== null){
                 $delivery->IDDeliveryPro = $request->getBodyParam('mPromotionId');
-
                 $depo = $this->findModel2($request->getBodyParam('mPromotionId'));
                 $depo->attributes = \Yii::$app->request->post();
                 $cus->CustomerPoint = $cus->CustomerPoint - $depo->DeliveryProPiont ;

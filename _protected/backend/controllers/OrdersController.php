@@ -7,15 +7,23 @@ use backend\models\Customer;
 use backend\models\Delivery;
 use backend\models\Deliverytime;
 use backend\models\DeliverytimeSearch;
+use backend\models\Employee;
 use backend\models\Orderdetails;
 use backend\models\OrderdetailsSearch;
 
+use backend\models\Payment;
 use kartik\mpdf\Pdf;
 use Mpdf\Mpdf;
+use PHPExcel;
+use PHPExcel_IOFactory;
+//include_once('PHPExcel/PHPExcel.php');
+
 use Yii;
 use backend\models\Orders;
 use backend\models\OrdersSearch;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -478,6 +486,62 @@ class OrdersController extends Controller
 
         return
             $this->redirect(['view', 'id' => $model->IDOrder]);
+    }
+
+    public function actionExcel() {
+        // Create new PHPExcel object
+
+        $objPHPExcel = new PHPExcel(); //สร้างไฟล์ excel
+        // Add some data
+        $objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A2', 'เวลาสั่งซื้อ') //กำหนดให้ cell A2 พิมพ์คำว่า Employees Report
+            ->setCellValue('B2', 'หมายเหตุ') //กำหนดให้ cell A4 พิมพ์คำว่า employeeNumber
+            ->setCellValue('C2', 'ราคารวม') //กำหนดให้ cell B4 พิมพ์คำว่า firstName
+            ->setCellValue('D2', 'สถานะการสั่งซื้อ') //กำหนดให้ cell C4 พิมพ์คำว่า lastName
+            ->setCellValue('E2', 'เงินที่จะชำระ') //กำหนดให้ cell D4 พิมพ์คำว่า extension
+            ->setCellValue('F2', 'ประเภทการชำระเงิน') //กำหนดให้ cell E4 พิมพ์คำว่า email
+            ->setCellValue('G2', 'ลูกค้า'); //กำหนดให้ cell D4 พิมพ์คำว่า officeCode
+//            ->setCellValue('H2', 'พนักงาน'); //กำหนดให้ cell G4 พิมพ์คำว่า reportsTo
+//            ->setCellValue('H4', 'jobTitle'); //กำหนดให้ cell H4 พิมพ์คำว่า jobTitle
+        $i = 4; // กำหนดค่า i เป็น 6 เพื่อเริ่มพิมพ์ที่แถวที่ 6
+
+        // Write data from MySQL result
+        $order = Orders::find()
+//            ->join('INNER JOIN','payment','payment.IDPaymant = orders.IDPaymant')
+//            ->join('INNER JOIN','customer','customer.IDCustomer = orders.IDCustomer')
+//            ->join('INNER JOIN','employee','employee.IDEmp = orders.IDEmp')
+            ->all();
+        foreach($order as $item){ //วนลูปหาพนักงานทั้งหมด
+            $objPHPExcel->getActiveSheet()->setCellValue('A' . $i, $item['OrderDate']);
+            //กำหนดให้คอลัมม์ A แถวที่ i พิมพ์ค่าของ employeeNumber
+            $objPHPExcel->getActiveSheet()->setCellValue('B' . $i, $item['OrderNote']);
+            $objPHPExcel->getActiveSheet()->setCellValue('C' . $i, $item['OrderTotalPrice']);
+            $objPHPExcel->getActiveSheet()->setCellValue('D' . $i, $item['OrderStatus']);
+            $objPHPExcel->getActiveSheet()->setCellValue('E' . $i, $item['Orderpayprice']);
+            $pay = Payment::findOne($item['IDPaymant']);
+            $objPHPExcel->getActiveSheet()->setCellValue('F' . $i, $pay->PaymentName);
+//            $model = Offices::findOne($item["officeCode"]);
+            //query หาชื่อจังหวัดที่มีค่าตรงกับ officeCode ของพนักงาน
+            $cus = Customer::findOne($item['IDCustomer']);
+            $objPHPExcel->getActiveSheet()->setCellValue('G' . $i, $cus->CustomerFName." ".$cus->CustomerLName);
+            // แทนค่าคอลัมม์ที่ F แถวที่  i ด้วย City ที่ query ออกมาได้
+//            $emp = Employee::findOne($item['IDEmp']);
+//            $objPHPExcel->getActiveSheet()->setCellValue('H' . $i, $emp->EmpFName." ".$emp->EmpLname);
+//            $objPHPExcel->getActiveSheet()->setCellValue('H' . $i, $item["jobTitle"]);
+            $i++;
+        }
+
+        // Rename sheet
+        //$objPHPExcel->getActiveSheet()->setTitle('Employees');
+
+        // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+        //$objPHPExcel->setActiveSheetIndex(0);
+
+        // Save Excel 2007 file
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        $objWriter->save('myData.xlsx'); // Save File เป็นชื่อ myData.xlsx
+        echo Html::a('ดาวน์โหลดเอกสาร', Url::to(Yii::getAlias('@web').'/myData.xlsx'), ['class' => 'btn btn-info']);  //สร้าง link download
+
     }
 
 }

@@ -41,7 +41,7 @@
 | [/apiorderjing/insertorderjing](#orderjing_post) | POST | เพิ่ม order orderdetail delivery |
 | [/apiorderhistory/listorderhistory](#orderhistory_get) | GET | แสดง 1orderhistory โดยส่งรหัส ลูกค้ามา |
 | [/apitestfood22/listtestfood22/:id](#food2_get_by_id) | GET | ข้อมูลร้าน 1เมนูแนะนำ เมนูธรรมดาของร้าน รายละเอียดของแต่ละเมนู ตาม id ร้าน  |
-| [/apiinsertcusaddress/insertcustomeraddress](#customeraddress_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
+| [/apiinsertcusaddress/insertcustomeraddress](#customeraddress2_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
 | [/apiinsertcusaddress/insertcustomeraddressbymap](#customeraddress_post) | POST | เพิ่มที่อยู่ลูกค้าจากการเลือกในเแผ่นที่ |
 | [/updatecusaddress/updatecustomeraddress](#customer_post) | POST |แก้ไ1ข customeraddress   โดยส่งรหัส ที่อยู่ มา |
 | [apilocation/listlocationall](#location_get) | GET| แสดงตำแหน้งทั้ง1หมด |
@@ -2008,7 +2008,7 @@ Normalmenu: [ ]
 
 <div class="page-break" />
 
-<div id="custimeraddress_post">
+<div id="custimeraddress2_post">
 
 ###  custimeraddress (POST)
 
@@ -2025,7 +2025,7 @@ http://udonfooddelivery.xyz/backend/apiinsertcusaddress/insertcustomeraddress
 ```json
 {
     "CustomerAddNo": 33,
-    "CustomerAddRoad": 2,
+    "IDLocation": 2,
     "IDCustomer": 2
 }
   

@@ -59,8 +59,9 @@ class ApiinsertcusaddressController extends Controller
         if (Yii::$app->request->post()) {
 
             $cusadd->CustomerAddNo = $request->getBodyParam('CustomerAddNo');
-            $cusadd->CustomerAddRoad = $request->getBodyParam('CustomerAddRoad');
-            $lo = $this->findModello($request->getBodyParam('CustomerAddRoad'));
+
+            $lo = $this->findModello($request->getBodyParam('IDLocation'));
+            $cusadd->CustomerAddRoad = $lo->LocationName;
 //            $cusadd->IDCustomerAddRoad = $request->getBodyParam('IDCustomerAddRoad');
             $cusadd->map = $lo->letlng;
             $cusadd->IDCustomer = $request->getBodyParam('IDCustomer');

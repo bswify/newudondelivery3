@@ -44,7 +44,7 @@
 | [/apiinsertcusaddress/insertcustomeraddress](#customeraddress2_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
 | [/apiinsertcusaddress/insertcustomeraddressbymap](#customeraddress_post) | POST | เพิ่มที่อยู่ลูกค้าจากการเลือกในเแผ่นที่ |
 | [/updatecusaddress/updatecustomeraddress](#customer_post) | POST |แก้ไ1ข customeraddress   โดยส่งรหัส ที่อยู่ มา |
-| [/updatecusaddress/deletecustomeraddress](#customer2_post) | POST| ลบ
+| [/updatecusaddress/deletecustomeraddress](#customer5_post) | POST| ลบ
 | [apilocation/listlocationall](#location_get) | GET| แสดงตำแหน้งทั้ง1หมด |
 | [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
 | [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
@@ -1569,7 +1569,7 @@ http://udonfooddelivery.xyz/backend/apicustomer/insertcustomer
 <div class="page-break" />
 
 
-<div id="cusaddress_get">
+<div id="cusaddress5_get">
 
 ### order (GET)
 

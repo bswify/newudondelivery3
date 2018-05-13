@@ -103,10 +103,10 @@ class ApilocationController extends Controller
         foreach ($data33 as $item3){
             $data2g =
                 array(
-                    "IDLocation" => $item2['IDLocation'],
-                    "LocationName" => $item2['LocationName'],
-                    "IDLocationType" => $item2['IDLocationType'],
-                    "letlng" => $item2['letlng']
+                    "IDLocation" => $item3['IDLocation'],
+                    "LocationName" => $item3['LocationName'],
+                    "IDLocationType" => $item3['IDLocationType'],
+                    "letlng" => $item3['letlng']
                 );
             $data3[] = $data2g;
         }

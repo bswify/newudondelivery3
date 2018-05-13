@@ -33,7 +33,7 @@
 | [/apiorderdetail/insertorderdetail](#orderdetail_post) | POST | เพิ่มorderdetail |
 | [/apiupdateorderdetail/updateorderdetail](#orderdetail_post) | POST | แก้ไขorderdetail โดยส่งรหัส orderdetail มา |
 | [/apiorderdetail/deleteorderdetail](#orderdetail_delete) | DELETE | ลบ orderdetail ตาม id การสั่งซื้อ (IDOder) |
-| [/apicustomer/insertcustomer](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก |
+| [/apicustomer/insertcustomer](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก ไม่เอาละ|
 | [/apicustomer/insertcustomer2](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก |
 | [/apilistcustomer/listcustomer](#customer_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
 | [/apiupdatecustomer/updatecustomer](#customer_post) | POST |แก้ไข customer เพิ่มลูกค้า สมัครสมาชิก โดยส่งรหัส สามาชิก มา |

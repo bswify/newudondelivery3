@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\CustomerAddress;
+use backend\models\Orders;
 use Yii;
 use yii\db\mssql\PDO;
 use yii\db\Query;
@@ -74,9 +75,27 @@ class ApiupdatecusaddressController extends Controller
     public function actionDeletecustomeraddress($id)
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
-        $id =  Yii::$app->request->get('id');
+//        $id =  Yii::$app->request->get('id');
+        $d = Orders::find()->where(['IDCustomerAddress' => $id])->one();
+        if($d !== null){
+            return array('status' => true, 'data' => 'CustomerAddress can not delete.');
+        }else{
+            $this->findModel($id)->delete();
+            return array('status' => true, 'data' => 'CustomerAddress delete successfully.');
+        }
 
-        $this->findModel($id)->delete();
-        return array('status' => true, 'data' => 'CustomerAddress delete successfully.');
+
     }
+//
+//    protected function findModelorder($id)
+//    {
+//        if (($model2 = Orders::find()->where(['IDCustomerAddress' => $id])->one()) !== null) {
+//            return $model2;
+//        }
+//        else{
+//
+//        }
+//
+//        throw new NotFoundHttpException('The requested page does not exist.');
+//    }
 }

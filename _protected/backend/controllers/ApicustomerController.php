@@ -65,8 +65,7 @@ class ApicustomerController extends Controller
             $cus->CUsername = $request->getBodyParam('username');
             $cus->CPasswords = $request->getBodyParam('password');
             $cus->LoginType =   "ลูกค้า";
-            $cus->iduserface = $request->getBodyParam('iduserface');
-            $cus->token = $request->getBodyParam('token');
+
             $to =$request->getBodyParam('token');
             $userf = $request->getBodyParam('iduserface');
             $usern =$request->getBodyParam('username');
@@ -96,6 +95,8 @@ class ApicustomerController extends Controller
                 if(count($data2)==0){
                     if ($cus->validate()) {
                         file_put_contents(Yii::getAlias('@UploadCus') . $filename, base64_decode($param));
+                        $cus->iduserface = $request->getBodyParam('iduserface');
+                        $cus->token = $request->getBodyParam('token');
                         $cus->save();
                         return array('status' => true, 'data' => 'Customer create successfully.');
                     } else {
@@ -170,7 +171,7 @@ class ApicustomerController extends Controller
 
                         );
                     $sql3->select('*')->from('customeraddress')
-                        ->where('IDCustomer =' . $item1['IDCustomer']);
+                        ->where('IDCustomer =' . $item1['IDCustomer'])->andWhere('CustomerAddNo != "null"');
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
                     $d = array('name' => $data2, 'address' => $data13);

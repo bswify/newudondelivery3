@@ -44,6 +44,7 @@
 | [/apiinsertcusaddress/insertcustomeraddress](#customeraddress2_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
 | [/apiinsertcusaddress/insertcustomeraddressbymap](#customeraddress_post) | POST | เพิ่มที่อยู่ลูกค้าจากการเลือกในเแผ่นที่ |
 | [/updatecusaddress/updatecustomeraddress](#customer_post) | POST |แก้ไ1ข customeraddress   โดยส่งรหัส ที่อยู่ มา |
+| [/updatecusaddress/deletecustomeraddress](#customer2_post) | POST| ลบ
 | [apilocation/listlocationall](#location_get) | GET| แสดงตำแหน้งทั้ง1หมด |
 | [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
 | [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
@@ -2775,4 +2776,26 @@ http://udonfooddelivery.xyz/backend/apicustomer/customerlogin
 }
 ```
 
+<div class="page-break">
+
+<div id="favoritemenu_delete">
+
+###  favoritemenu (DELETE)
+
+| Attribute   | Description |
+| ----------- | ----------- |
+| URL         | /apiupdatecusaddress/deletecustomeraddress/:id  |
+| HTTP METHOD | DELETE         |
+#### Request example
+```json
+http://udonfooddelivery.xyz/backend/apiupdatecusaddress/deletecustomeraddress?id=15
+
+```
+####  Response example (Success)
+```json
+{
+    "status": true,
+    "data": "CustomerAddress delete successfully."
+}
+```
 

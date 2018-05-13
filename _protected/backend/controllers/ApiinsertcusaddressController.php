@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\CustomerAddress;
+use backend\models\Location;
 use Yii;
 use yii\db\mssql\PDO;
 use yii\db\Query;

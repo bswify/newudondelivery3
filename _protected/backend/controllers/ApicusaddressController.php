@@ -42,7 +42,7 @@ class ApicusaddressController extends Controller
         $sql2 = new Query;
         $data3 = array();
         $sql2->select('*')->from('customeraddress')
-            ->where('IDCustomer =' . $idR);
+            ->where('IDCustomer =' . $idR)->andWhere('CustomerAddNo != "null"');
         $command11 = $sql2->createCommand();
         $data11 = $command11->queryAll();
         foreach ($data11 as $item1) {

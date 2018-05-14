@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\Customer;
+use backend\models\Employee;
 use backend\models\Favoritemenu;
 use backend\models\Orderdetails;
 use backend\models\Orders;
@@ -171,7 +172,8 @@ class ApicustomerController extends Controller
 
                         );
                     $sql3->select('*')->from('customeraddress')
-                        ->where('IDCustomer =' . $item1['IDCustomer'])->andWhere('CustomerAddNo != "null"');
+                        ->where('IDCustomer =' . $item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
+                    ->andWhere('status = "1"');
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
                     $d = array('name' => $data2, 'address' => $data13);
@@ -183,8 +185,10 @@ class ApicustomerController extends Controller
 
             }
 
-        }else{
+        }
+        else{
             $model = Customer::find()->where(['CUsername' => $username])->andWhere(['CPasswords' => $pass]) ->one();
+            $model2 = Employee::find()->where(['EUsername' => $username])->andWhere(['Epasswords' => $pass]) ->one();
             if($model !== null){
                 $sql2 = new Query;
                 $sql3 = new Query;
@@ -213,7 +217,8 @@ class ApicustomerController extends Controller
 
                         );
                     $sql3->select('*')->from('customeraddress')
-                        ->where('IDCustomer ='.$item1['IDCustomer']);
+                        ->where('IDCustomer ='.$item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
+                        ->andWhere('status = "1"');
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
                     $d = array('name'=>$data2,'address'=>$data13);
@@ -221,7 +226,27 @@ class ApicustomerController extends Controller
                 }
                 return array('success' => true, 'data' => $data3);
 
-            }else{
+            }
+            else if ($model2 !== null && $model == null){
+
+
+                foreach ($model2 as $item) {
+                    $data2 =
+                        array(
+                            "IDEmp" => $item['IDEmp'],
+                            "EmpFName" => $item['EmpFName'],
+                            "EmpLname" => $item['EmpLname'],
+                            "EmpPhone"=>$item['EmpPhone'],
+                            "EUsername"=> $item['EUsername'],
+                            "Epasswords"=>$item['Epasswords'],
+                            "LoginType"=>$item['LoginType']
+                        );
+
+                }
+                return array('success' => true, 'data' => $data2);
+
+            }
+            else{
                 return array('success' => false, 'data' => "username and password ไม่มีในฐานข้อมูล");
 
             }
@@ -260,6 +285,136 @@ class ApicustomerController extends Controller
         }
     }
 
+
+
+
+    public function actionCustomerlogin2()
+    {
+        \yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $username =  Yii::$app->request->getBodyParam('username');
+        $pass =  Yii::$app->request->getBodyParam('pass');
+        $iduserface =  Yii::$app->request->getBodyParam('iduserface');
+        $token =  Yii::$app->request->getBodyParam('token');
+
+
+
+
+        if($iduserface !== null){
+            $model = Customer::find()->where(['iduserface' => $iduserface])->one();
+            if($model !== null) {
+                $cus = $this->findModel($iduserface);
+
+                $cus->attributes = \Yii::$app->request->post();
+                $cus->token = $token;
+                $cus->save();
+                $sql2 = new Query;
+                $sql3 = new Query;
+                $data3 = array();
+                $sql2->select('*')->from('customer')
+                    ->where('iduserface = "' . $iduserface . '"');
+                $command11 = $sql2->createCommand();
+                $data11 = $command11->queryAll();
+                foreach ($data11 as $item1) {
+                    $data2 =
+                        array(
+                            "IDCustomer" => $item1['IDCustomer'],
+                            "CustomerFName" => $item1['CustomerFName'],
+
+                            "CustomerLName" => $item1['CustomerLName'],
+                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/images/Customer/" . $item1['CustomerImage'],
+                            "CustomerPoint" => $item1['CustomerPoint'],
+                            "CustomerPhone" => $item1['CustomerPhone'],
+                            "CUsername" => $item1['CUsername'],
+                            "CPasswords" => $item1['CPasswords'],
+                            "LoginType" => $item1['LoginType'],
+                            "email" => $item1['email'],
+                            "iduserface" => $item1['iduserface'],
+                            "token" => $item1['token']
+
+
+                        );
+                    $sql3->select('*')->from('customeraddress')
+                        ->where('IDCustomer =' . $item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
+                        ->andWhere('status = "1"');
+                    $command12 = $sql3->createCommand();
+                    $data13 = $command12->queryAll();
+                    $d = array('name' => $data2, 'address' => $data13);
+                    $data3[] = $d;
+                }
+                return array('success' => true, 'data' => $data3);
+            }else{
+                return array('success' => false, 'data' => "iduserface ไม่มีในฐานข้อมูล");
+
+            }
+
+        }else{
+            $model = Customer::find()->where(['CUsername' => $username])->andWhere(['CPasswords' => $pass]) ->one();
+            $model2 = Employee::find()->where(['EUsername' => $username])->andWhere(['Epasswords' => $pass]) ->one();
+            if($model !== null && $model2 == null){
+                $sql2 = new Query;
+                $sql3 = new Query;
+                $data3 = array();
+                $sql2->select('*')->from('customer')
+                    ->where('CUsername = "'.$username.'"');
+                $command11 = $sql2->createCommand();
+                $data11 = $command11->queryAll();
+                foreach ($data11 as $item1) {
+                    $data2 =
+                        array(
+                            "IDCustomer" => $item1['IDCustomer'],
+                            "CustomerFName" => $item1['CustomerFName'],
+
+                            "CustomerLName" => $item1['CustomerLName'],
+                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/images/Customer/".$item1['CustomerImage'],
+                            "CustomerPoint" => $item1['CustomerPoint'],
+                            "CustomerPhone" => $item1['CustomerPhone'],
+                            "CUsername" => $item1['CUsername'],
+                            "CPasswords" => $item1['CPasswords'],
+                            "LoginType" => $item1['LoginType'],
+                            "email" => $item1['email'],
+                            "iduserface" => $item1['iduserface'],
+                            "token" => $item1['token']
+
+
+                        );
+                    $sql3->select('*')->from('customeraddress')
+                        ->where('IDCustomer ='.$item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
+                        ->andWhere('status = "1"');
+                    $command12 = $sql3->createCommand();
+                    $data13 = $command12->queryAll();
+                    $d = array('name'=>$data2,'address'=>$data13);
+                    $data3[] = $d;
+                }
+                return array('success' => true, 'data' => $data3);
+
+            }else if ($model2 !== null && $model == null){
+
+
+                foreach ($model2 as $item) {
+                    $data2 =
+                        array(
+                            "IDEmp" => $item['IDEmp'],
+                            "EmpFName" => $item['EmpFName'],
+                            "EmpLname" => $item['EmpLname'],
+                            "EmpPhone"=>$item['EmpPhone'],
+                            "EUsername"=> $item['EUsername'],
+                            "Epasswords"=>$item['Epasswords'],
+                            "LoginType"=>$item['LoginType']
+                        );
+
+                }
+                return array('success' => true, 'data' => $data2);
+
+            }
+            else{
+                return array('success' => false, 'data' => "username and password ไม่มีในฐานข้อมูล");
+
+            }
+
+
+        }
+
+    }
 
 
 

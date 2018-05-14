@@ -3,9 +3,11 @@
 namespace backend\controllers;
 
 use backend\models\Customer;
+use backend\models\Employee;
 use backend\models\Favoritemenu;
 use backend\models\Orderdetails;
 use backend\models\Orders;
+use Mpdf\Tag\Q;
 use Yii;
 use yii\db\Query;
 use yii\web\Controller;
@@ -138,6 +140,122 @@ class ApiemproyeeController extends Controller
 
 
         return array('success' => true, 'data' => $data3);
+
+
+
+    }
+
+
+    public function actionEmplogin()
+    {
+        \yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $username =  Yii::$app->request->getBodyParam('username');
+        $pass =  Yii::$app->request->getBodyParam('pass');
+
+        $model = Employee::find()->where(['EUsername' => $username])->andWhere(['Epasswords' => $pass])->one();
+        if($model !== null){
+            foreach ($model as $item){
+                $data = array(
+                    "IDEmp" => $item['IDEmp'],
+                    "EmpFName" => $item['EmpFName'],
+                    "EmpLname" => $item['EmpLname'],
+                    "EmpPhone"=>$item['EmpPhone'],
+                    "EUsername"=> $item['EUsername'],
+                    "Epasswords"=>$item['Epasswords'],
+                    "LoginType"=>$item['LoginType']
+                );
+            }
+            return array('success' => true, 'data' => $data);
+        }else{
+            return array('success' => true, 'data' => "username และ password ไม่ถูกต้อง");
+        }
+
+
+    }
+
+    public function actionEmpvieworder($id)
+    {
+        \yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $id =  Yii::$app->request->get('id');
+
+        $dataall = array();
+        $foof = array();
+        $order = new Query();
+        $orderd = new Query();
+        $order->select('*')
+            ->from('orders')
+            ->join('INNER JOIN','payment','orders.IDPaymant = payment.IDPaymant')
+            ->join('INNER JOIN','customer','orders.IDCustomer = customer.IDCustomer')
+            ->join('INNER JOIN','employee','orders.IDEmp = employee.IDEmp')
+            ->join('INNER JOIN','customeraddress','orders.IDCustomerAddress = customeraddress.IDCustomerAddress')
+            ->where('orders.IDEmp ='.$id)
+        ;
+        $com = $order->createCommand();
+        $do = $com->queryAll();
+
+            foreach ($do as $item){
+                $orderd = new Query();
+                $data = array(
+                    "IDOrder" => $item['IDOrder'],
+                    "OrderDate" => $item['OrderDate'],
+                    "OrderNote" => $item['OrderNote'],
+                    "OrderTotalPrice"=>$item['OrderTotalPrice'],
+                    "OrderStatus"=> $item['OrderStatus'],
+                    "IDPaymant"=>$item['IDPaymant'],
+                    "PaymentName"=>$item['PaymentName'],
+                    "IDCustomer"=>$item['IDCustomer'],
+                    "CustomerFName"=>$item['CustomerFName'],
+                    "CustomerLName"=>$item['CustomerLName'],
+                    "CustomerPhone"=>$item['CustomerPhone'],
+                    "IDEmp"=> $item['IDEmp'],
+                    "EmpFName"=>$item['EmpFName'],
+                    "EmpLname"=>$item['EmpLname'],
+                    "IDCustomerAddress"=>$item['IDCustomerAddress'],
+                    "CustomerAddNo"=> $item['CustomerAddNo'],
+                    "CustomerAddRoad"=>$item['CustomerAddRoad'],
+                    "map"=>$item['map'],
+                    "Orderpayprice"=>$item['Orderpayprice']
+                );
+
+                $orderd->select('*')
+                    ->from('orderdetails')
+                    ->join('INNER JOIN','food','orderdetails.IDFood = food.IDFood')
+                    ->join('INNER JOIN','restaurant','food.IDRestaurant = restaurant.IDRestaurant')
+                    ->where('IDOrder = '.$item['IDOrder'])
+
+                    ;
+                $com1 = $orderd->createCommand();
+                $orderd1 = $com1->queryAll();
+
+                foreach ($orderd1 as $item1){
+                    $dataoderd = array(
+                        "IDOrderDetails"=>$item1['IDOrderDetails'],
+                        "IDFood"=>$item1['IDFood'],
+                        "FoodImg"=>"http://udonfooddelivery.xyz/uploads/images/Food/".$item1['FoodImg'],
+                        "FoodName"=>$item1['FoodName'],
+                        "FoodPrice"=>$item1['FoodPrice'],
+                        "IDFoodType"=>$item1['IDFoodType'],
+                        "IDRestaurant"=>$item1['IDRestaurant'],
+                        "ResName"=>$item1['ResName'],
+                        "MenuTypeName"=>$item1['MenuTypeName'],
+                        "IDFoodDetails"=>$item1['IDFoodDetails'],
+                        "AmountFood"=>$item1['AmountFood'],
+                        "IDOrder"=>$item1['IDOrder'],
+                        "reason"=>$item1['reason'],
+
+
+                    );
+
+
+                    $foof[]=$dataoderd;
+                }
+
+                $f = array('order'=> $data,'food'=>$foof);
+                $dataall[] = $f;
+                $foof=null;
+            }
+            return array('success' => true, 'data' => $dataall);
+
 
 
 

@@ -75,15 +75,16 @@ class ApiupdatecusaddressController extends Controller
     public function actionDeletecustomeraddress($id)
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
-//        $id =  Yii::$app->request->get('id');
-        $d = Orders::find()->where(['IDCustomerAddress' => $id])->one();
-        if($d !== null){
-            return array('status' => true, 'data' => 'CustomerAddress can not delete.');
-        }else{
-            $this->findModel($id)->delete();
-            return array('status' => true, 'data' => 'CustomerAddress delete successfully.');
-        }
 
+        $cusadd = $this->findModel($id);
+
+        $cusadd->attributes = \Yii::$app->request->post();
+
+//            $cusadd->attributes = \Yii::$app->request->post();
+            $cusadd->status = "0";
+            $cusadd->save();
+
+            return array('status' => true, 'data' => 'CustomerAddress delete successfully.');
 
     }
 //

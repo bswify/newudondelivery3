@@ -50,6 +50,7 @@
 | [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
 | [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
 | [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
+| [/apiemproyee/empvieworder](#empvieworder_get) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
 | 
 
 <div class="page-break" />
@@ -2798,4 +2799,236 @@ http://udonfooddelivery.xyz/backend/apiupdatecusaddress/deletecustomeraddress?id
     "data": "CustomerAddress delete successfully."
 }
 ```
+
+
+<div class="page-break" />
+
+
+<div id="empvieworder_get">
+
+### order (GET)
+
+| Attribute   | Description             |
+| ----------- | ----------------------- |
+| URL         | //apiemproyee/empvieworder/:id|
+| HTTP METHOD | GET                     |
+
+#### Request example
+```json
+http://udonfooddelivery.xyz/backend/apiemproyee/empvieworder?id=1
+```
+
+
+#### Response example (Success)
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "order": {
+                "IDOrder": "22",
+                "OrderDate": "2018-05-02 02:38:49",
+                "OrderNote": null,
+                "OrderTotalPrice": "590",
+                "OrderStatus": "จัดส่งแล้ว",
+                "IDPaymant": "1",
+                "PaymentName": "ชำระเงินปลายทาง",
+                "IDCustomer": "1",
+                "CustomerFName": "นพรัตน์",
+                "CustomerLName": "ยะสาธะโร",
+                "CustomerPhone": "025-836-9140",
+                "IDEmp": "1",
+                "EmpFName": "ทะเล",
+                "EmpLname": "หายทราย",
+                "IDCustomerAddress": "6",
+                "CustomerAddNo": "557",
+                "CustomerAddRoad": "โพศรี",
+                "map": null,
+                "Orderpayprice": null
+            },
+            "food": [
+                {
+                    "IDOrderDetails": "23",
+                    "IDFood": "28",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/ไก่ย่าง.jpg",
+                    "FoodName": "ไก่ย่าง",
+                    "FoodPrice": "120",
+                    "IDFoodType": "7",
+                    "IDRestaurant": "21",
+                    "ResName": "ส้มตำเจ้ไก่",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDFoodDetails": "105",
+                    "AmountFood": "3",
+                    "IDOrder": "22",
+                    "reason": "asdfasdfa"
+                },
+                {
+                    "IDOrderDetails": "24",
+                    "IDFood": "27",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/ส้มตำ.png",
+                    "FoodName": "ส้มตำป่า",
+                    "FoodPrice": "50",
+                    "IDFoodType": "2",
+                    "IDRestaurant": "21",
+                    "ResName": "ส้มตำเจ้ไก่",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDFoodDetails": "15",
+                    "AmountFood": "4",
+                    "IDOrder": "22",
+                    "reason": "sldfsodfjsldf"
+                }
+            ]
+        },
+        {
+            "order": {
+                "IDOrder": "25",
+                "OrderDate": "2018-05-07 10:21:08",
+                "OrderNote": null,
+                "OrderTotalPrice": "934",
+                "OrderStatus": "รอการยืนยัน",
+                "IDPaymant": "1",
+                "PaymentName": "ชำระเงินปลายทาง",
+                "IDCustomer": "1",
+                "CustomerFName": "นพรัตน์",
+                "CustomerLName": "ยะสาธะโร",
+                "CustomerPhone": "025-836-9140",
+                "IDEmp": "1",
+                "EmpFName": "ทะเล",
+                "EmpLname": "หายทราย",
+                "IDCustomerAddress": "6",
+                "CustomerAddNo": "557",
+                "CustomerAddRoad": "โพศรี",
+                "map": null,
+                "Orderpayprice": null
+            },
+            "food": [
+                {
+                    "IDOrderDetails": "25",
+                    "IDFood": "60",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/66d4d50367d1483794f23a4110117b2c.jpg",
+                    "FoodName": "สเต็กสันคอหมู",
+                    "FoodPrice": "99",
+                    "IDFoodType": "7",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDFoodDetails": "119",
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "26",
+                    "IDFood": "62",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/2fb97366740a45c9b012ea14f01dad77.jpg",
+                    "FoodName": "ราเมงต้มยำหมูเด้ง",
+                    "FoodPrice": "75",
+                    "IDFoodType": "8",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDFoodDetails": "121",
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "27",
+                    "IDFood": "42",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/0b2c3263a7c1459da5cc4e855e8c397b.jpg",
+                    "FoodName": "คิงไซส์ เบอร์เกอร์",
+                    "FoodPrice": "150",
+                    "IDFoodType": "1",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": null,
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "28",
+                    "IDFood": "43",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/af328adc58f544afb17e055645b9648c.jpg",
+                    "FoodName": "แพนเค้ก",
+                    "FoodPrice": "150",
+                    "IDFoodType": "1",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": null,
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "29",
+                    "IDFood": "61",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/aeceef2df2484c00ab0d8b9fb4b91484.jpg",
+                    "FoodName": "ต้มยำจิ๊กโก๋",
+                    "FoodPrice": "70",
+                    "IDFoodType": "8",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": "120",
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "30",
+                    "IDFood": "63",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/43a86c012ed84ef59748efca4d545939.jpg",
+                    "FoodName": "คลาสสิคเบอเกอร์หมู",
+                    "FoodPrice": "110",
+                    "IDFoodType": "1",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": null,
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "31",
+                    "IDFood": "64",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/ba70f0040fd04338a316bffa02e1d172.jpg",
+                    "FoodName": "บานนอฟฟี่",
+                    "FoodPrice": "60",
+                    "IDFoodType": "1",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": null,
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                },
+                {
+                    "IDOrderDetails": "32",
+                    "IDFood": "65",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/2ac822b43ffe4989a86dc440472df374.jpg",
+                    "FoodName": "เมล่อน มิลค์",
+                    "FoodPrice": "90",
+                    "IDFoodType": "1",
+                    "IDRestaurant": "25",
+                    "ResName": "The_Zixga_club",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDFoodDetails": null,
+                    "AmountFood": "1",
+                    "IDOrder": "25",
+                    "reason": ""
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+
+
 

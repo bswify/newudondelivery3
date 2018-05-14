@@ -51,6 +51,7 @@
 | [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
 | [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
 | [/apiemproyee/empvieworder](#empvieworder_get) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
+| [/apiemproyee/empupdateorder](#empupdateorder_post) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
 | 
 
 <div class="page-break" />
@@ -3025,6 +3026,31 @@ http://udonfooddelivery.xyz/backend/apiemproyee/empvieworder?id=1
             ]
         }
     ]
+}
+```
+<div class="page-break" />
+
+
+<div id="empvieworder_get">
+
+### order (GET)
+
+| Attribute   | Description             |
+| ----------- | ----------------------- |
+| URL         | /apiemproyee/empupdateorder|
+| HTTP METHOD | GET                     |
+
+#### Request example
+```json
+http://udonfooddelivery.xyz/backend/apiemproyee/empupdateorder
+```
+
+
+#### Response example (Success)
+```json
+{
+    "status": true,
+    "data": "Update Status Order successfully."
 }
 ```
 

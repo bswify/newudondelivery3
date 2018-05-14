@@ -6,6 +6,7 @@ use frontend\models\User;
 use Yii;
 use backend\models\Restaurant;
 use backend\models\RestaurantSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,21 +24,21 @@ class RestaurantController extends Controller
     {
         return [
 
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'rules' => [
-//                  [
-//                    'actions' => ['login', 'error'],
-//                    'allow' => true,
-//                    'roles' => ['?'],//คนที่ยังไม่ได้ล็อคอิน
-//                  ],
-//                  [
-//                    'actions' => ['logout', 'index','delete','create','view','update'],//เฉพาะหน้าที่กำหนด
-//                    'allow' => true,//อนุญาต
-//                    'roles' => ['admin'],//คนที่ล็อคอิน ต้องเป็นแอดมิน
-//                  ],
-//                ],
-//              ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                  [
+                    'actions' => ['login', 'error'],
+                    'allow' => true,
+                    'roles' => ['?'],//คนที่ยังไม่ได้ล็อคอิน
+                  ],
+                  [
+                    'actions' => ['logout', 'index','delete','create','view','update'],//เฉพาะหน้าที่กำหนด
+                    'allow' => true,//อนุญาต
+                    'roles' => ['admin'],//คนที่ล็อคอิน ต้องเป็นแอดมิน
+                  ],
+                ],
+              ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

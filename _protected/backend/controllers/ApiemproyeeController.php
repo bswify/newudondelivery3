@@ -262,6 +262,27 @@ class ApiemproyeeController extends Controller
     }
 
 
+    public function actionEmpupdateorder()
+    {
+        \yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $status =  Yii::$app->request->getBodyParam('status');
+        $idorder =  Yii::$app->request->getBodyParam('idorder');
+
+        $model = Orders::find($idorder)->all();
+        $model->attributes = \Yii::$app->request->post();
+        if($model !== null){
+            $model->OrderStatus = $status;
+            $model->save();
+            return array('success' => true, 'data' => "Update Status Order successfully.");
+        }else{
+            return array('success' => true, 'data' => "Can not Update Status Order.");
+        }
+
+
+
+
+    }
+
 
 
 

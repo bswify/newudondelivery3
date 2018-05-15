@@ -189,6 +189,9 @@ class ApiemproyeeController extends Controller
             ->join('INNER JOIN','employee','orders.IDEmp = employee.IDEmp')
             ->join('INNER JOIN','customeraddress','orders.IDCustomerAddress = customeraddress.IDCustomerAddress')
             ->where('orders.IDEmp ='.$id)
+            ->andWhere('orders.OrderStatus != "รอการยืนยัน"')
+            ->andWhere('orders.OrderStatus != "จัดส่งแล้ว"')
+            ->andWhere('orders.OrderStatus != "ไม่พบผู้สั่งซื้อ"')
         ;
         $com = $order->createCommand();
         $do = $com->queryAll();

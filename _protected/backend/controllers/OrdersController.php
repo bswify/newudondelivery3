@@ -280,19 +280,28 @@ class OrdersController extends Controller
     public function actionStatus1($id)
     {
         $model = $this->findModel($id);
-
-        $searchModel = new OrderdetailsSearch();
-        $dataProvider = $searchModel->search($id);
-
-        $model->OrderStatus = "ยืนยันการสั่งซื้อ";
-//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-        $model->save();
-        return $this->redirect(['view',
-            'id' => $model->IDOrder,
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+        $model->OrderStatus="ยืนยันการสั่งซื้อ";
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->IDOrder]);
+        }
+        return $this->render('update2', [
+//            $model->OrderStatus="ยืนยันการสั่งซื้อ",
+//            $model->save();
             'model' => $model,
         ]);
+
+//        $searchModel = new OrderdetailsSearch();
+//        $dataProvider = $searchModel->search($id);
+//
+//        $model->OrderStatus = "ยืนยันการสั่งซื้อ";
+////        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+//        $model->save();
+//        return $this->redirect(['view',
+//            'id' => $model->IDOrder,
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//            'model' => $model,
+//        ]);
 //        }
 //        else{
 //            return $this->render('view', [

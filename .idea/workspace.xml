@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6ce5e9-0a67-4ebe-858a-8f0efd33c171" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/API.md" afterPath="$PROJECT_DIR$/API.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_protected/backend/views/orders/_form2.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_protected/backend/views/orders/update2.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php" afterPath="$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php" />
+      <change beforePath="$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php" afterPath="$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php" />
+      <change beforePath="$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php" afterPath="$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php" />
+      <change beforePath="$PROJECT_DIR$/_protected/backend/views/orders/view.php" afterPath="$PROJECT_DIR$/_protected/backend/views/orders/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,12 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="API.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="API.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="697">
-                <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <first_editor relative-caret-position="884">
+                <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
                 <folding>
                   <marker date="1526368023912" expanded="true" signature="4214:22717" ph="{&quot;success&quot;: true...}" />
                   <marker date="1526368023912" expanded="true" signature="4245:22711" ph="[...]" />
@@ -406,11 +412,82 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Apitestfood22Controller.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApiemproyeeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="193" column="63" lean-forward="false" selection-start-line="193" selection-start-column="63" selection-end-line="193" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="285" column="9" lean-forward="false" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+                <element signature="e#11324#12969#0#PHP" expanded="false" />
+                <element signature="e#12975#13881#0#PHP" expanded="false" />
+                <element signature="e#13887#14677#0#PHP" expanded="false" />
+                <element signature="e#14857#15184#0#PHP" expanded="false" />
+                <element signature="e#15191#15398#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/update2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="41" />
+              <folding>
+                <element signature="e#7#35#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/_form2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#35#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="36" column="12" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="36" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Apitestfood22Controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="234" column="53" lean-forward="false" selection-start-line="234" selection-start-column="53" selection-end-line="234" selection-end-column="53" />
+            <state relative-caret-position="154">
+              <caret line="292" column="51" lean-forward="false" selection-start-line="292" selection-start-column="51" selection-end-line="292" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -465,8 +542,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_protected/backend/controllers/Apitest2Controller.php" />
-        <option value="$PROJECT_DIR$/_protected/backend/controllers/ApitestController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/Apitestfood220Controller.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiindeupcusaddressController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/models/Customeraddress.php" />
@@ -498,12 +573,10 @@
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiorderhistorynotjoinController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApilistcustomerController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/models/Customer.php" />
-        <option value="$PROJECT_DIR$/_protected/backend/views/orders/view.php" />
         <option value="$PROJECT_DIR$/_protected/backend/models/OrdersSearch.php" />
         <option value="$PROJECT_DIR$/_protected/backend/views/orders/viewpdf2.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApifavoritemenuController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/views/orders/index.php" />
-        <option value="$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiorderrController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApilocationController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiinsertcusaddressController.php" />
@@ -512,10 +585,14 @@
         <option value="$PROJECT_DIR$/_protected/backend/models/Orders.php" />
         <option value="$PROJECT_DIR$/_protected/backend/models/CustomerAddress.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/ApicustomerController.php" />
-        <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php" />
         <option value="$PROJECT_DIR$/_protected/backend/controllers/RestaurantController.php" />
-        <option value="$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php" />
         <option value="$PROJECT_DIR$/API.md" />
+        <option value="$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php" />
+        <option value="$PROJECT_DIR$/_protected/backend/views/orders/view.php" />
+        <option value="$PROJECT_DIR$/_protected/backend/views/orders/update2.php" />
+        <option value="$PROJECT_DIR$/_protected/backend/views/orders/_form2.php" />
+        <option value="$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php" />
+        <option value="$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php" />
       </list>
     </option>
   </component>
@@ -733,6 +810,21 @@
               <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="newudondelivery3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newudondelivery3" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="newudondelivery3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newudondelivery3" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="orders" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -751,8 +843,8 @@
       <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\controllers\api\v1" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\controllers" />
       <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\views\orders" />
+      <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\controllers" />
       <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\mail\layouts" />
       <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend" />
       <recent name="C:\xampp\htdocs\newudondelivery3\_protected\backend\config\models" />
@@ -845,18 +937,18 @@
       <workItem from="1525806266546" duration="4399000" />
       <workItem from="1525852864516" duration="11532000" />
       <workItem from="1526094658756" duration="14965000" />
-      <workItem from="1526286165643" duration="11415000" />
+      <workItem from="1526286165643" duration="14278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="712986000" />
+    <option name="totallyTimeSpent" value="715849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1211" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26151174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26151174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -896,27 +988,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_protected/backend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="118" lean-forward="false" selection-start-line="32" selection-start-column="118" selection-end-line="32" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/frontend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="114" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/backend/views/customer/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_protected/backend/views/customer/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1004,13 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3077">
-          <caret line="183" column="44" lean-forward="false" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/viewpdf.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
@@ -1022,6 +1086,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <marker date="1525809704794" expanded="true" signature="991:1033" ph="select * fro... orders" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,6 +1181,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="42" column="6" lean-forward="false" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,6 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="44" column="6" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,13 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-455">
           <caret line="118" column="82" lean-forward="false" selection-start-line="118" selection-start-column="82" selection-end-line="118" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1223,14 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="275" column="88" lean-forward="false" selection-start-line="275" selection-start-column="55" selection-end-line="275" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/Apifood2Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
@@ -1255,19 +1309,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php">
+    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/ApiemproyeeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="234" column="53" lean-forward="false" selection-start-line="234" selection-start-column="53" selection-end-line="234" selection-end-column="53" />
+        <state relative-caret-position="277">
+          <caret line="193" column="63" lean-forward="false" selection-start-line="193" selection-start-column="63" selection-end-line="193" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/update2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="36" column="12" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="36" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/views/orders/_form2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="285" column="9" lean-forward="false" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#11324#12969#0#PHP" expanded="false" />
+            <element signature="e#12975#13881#0#PHP" expanded="false" />
+            <element signature="e#13887#14677#0#PHP" expanded="false" />
+            <element signature="e#14857#15184#0#PHP" expanded="false" />
+            <element signature="e#15191#15398#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/API.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="697">
-            <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <first_editor relative-caret-position="884">
+            <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
             <folding>
               <marker date="1526368023912" expanded="true" signature="4214:22717" ph="{&quot;success&quot;: true...}" />
               <marker date="1526368023912" expanded="true" signature="4245:22711" ph="[...]" />
@@ -1648,6 +1753,14 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_protected/backend/controllers/Apitestfood22Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="292" column="51" lean-forward="false" selection-start-line="292" selection-start-column="51" selection-end-line="292" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

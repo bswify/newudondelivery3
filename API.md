@@ -42,20 +42,17 @@
 | [/apiorder/listorder](#order_get) | GET | ข้อมูลการสั่งซื้ออาหาร |
 | [/apicusaddress/listcusaddress](#cusaddress_get_by_id) | GET | แสดงข้อมุลที่อยู๋ของลูกค้า ตาม id ลูกค้า |
 | [/apilistcustomer/listcustomer](#customer_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
-
 | [/apiorderdetail/deleteorderdetail](#orderdetail_delete) | DELETE | ลบ orderdetail ตาม id การสั่งซื้อ (IDOder) |
 | [/apiorderdetail/insertorderdetail](#orderdetail_post) | POST | เพิ่มorderdetail |
 | [/apiupdateorderdetail/updateorderdetail](#orderdetail_post) | POST | แก้ไขorderdetail โดยส่งรหัส orderdetail มา |
 | [/apicustomer/insertcustomer](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก ไม่เอาละ|
 | [/apicustomer/insertcustomer2](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก |
-
 | [/apiupdatecustomer/updatecustomer](#customer_post) | POST |แก้ไข customer เพิ่มลูกค้า สมัครสมาชิก โดยส่งรหัส สามาชิก มา |
 | [/apiorderjing/insertorderjing](#orderjing_post) | POST | เพิ่ม order orderdetail delivery |
-
 | [/apiinsertcusaddress/insertcustomeraddress](#customeraddress2_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
 | [/apiinsertcusaddress/insertcustomeraddressbymap](#customeraddress_post) | POST | เพิ่มที่อยู่ลูกค้าจากการเลือกในเแผ่นที่ |
 | [/updatecusaddress/updatecustomeraddress](#customer_post) | POST |แก้ไ1ข customeraddress   โดยส่งรหัส ที่อยู่ มา |
-| [/updatecusaddress/deletecustomeraddress](#customer5_post) | POST| ลบ
+| [/updatecusaddress/deletecustomeraddress](#customer5_post) | POST| ลบ |
 
 | 
 

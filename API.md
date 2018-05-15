@@ -23,6 +23,16 @@
 | [/apirestaurant/listrestaurant](#allres_get) | GET | ร้านอาหารทั้งหมด |
 | [/apitestfood2/listtestfood2/:id](#food_get_by_id) | GET | ข้อมูลร้าน เมนูแนะนำ เมนูธรรมดาของร้าน ตาม id ร้าน  |
 | [/apireviewres/listreviewres/:id](#review_get_by_id) | GET | ข้อมูลรีวิวร้านอาหาร ตาม id ร้าน  |
+| [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
+| [/apiemproyee/empvieworder](#empvieworder_get) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
+| [/apiemproyee/empupdateorder](#empupdateorder_post) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
+| [/apitestfood22/listfoodforres/:idr&idc](#listfoodforres_get) | GET | แสดงเมนูอาหารของร้าน โดยแสกงสถานะเมนูโปรด โดยส่ง ไอดีร้าน และไอดีลูกค้า |
+| [apilocation/listlocationall](#location_get) | GET| แสดงตำแหน้งทั้ง1หมด |
+| [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
+| [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
+| [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
+| [/apiorderhistory/listorderhistory](#orderhistory_get) | GET | แสดง 1orderhistory โดยส่งรหัส ลูกค้ามา |
+| [/apitestfood22/listtestfood22/:id](#food2_get_by_id) | GET | ข้อมูลร้าน 1เมนูแนะนำ เมนูธรรมดาของร้าน รายละเอียดของแต่ละเมนู ตาม id ร้าน  |
 | [/apigetreviewres/insertresreview](#review_post) | POST | เพิ่มข้อมูลรีวิวร้านอาหาร  |
 | [/apifavoritemenu/listfavoritemenu/:id](#favoritemenu_get_by_id) | GET | แสดงเมนูโปรด ตาม id ลูกค้า  |
 | [/apifavoritemenu/insertfavoritemenu](#favoritemenu_post) | POST | เพิ่มเมนูโปรด |
@@ -30,29 +40,23 @@
 | [/apiorder/insertorder](#order_post) | POST | เพิ่มorder |
 | [/apiorder/deleteorder](#order_delete) | DELETE | ลบorder ตาม id กการั่งซื้อ |
 | [/apiorder/listorder](#order_get) | GET | ข้อมูลการสั่งซื้ออาหาร |
+| [/apicusaddress/listcusaddress](#cusaddress_get_by_id) | GET | แสดงข้อมุลที่อยู๋ของลูกค้า ตาม id ลูกค้า |
+| [/apilistcustomer/listcustomer](#customer_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
+
+| [/apiorderdetail/deleteorderdetail](#orderdetail_delete) | DELETE | ลบ orderdetail ตาม id การสั่งซื้อ (IDOder) |
 | [/apiorderdetail/insertorderdetail](#orderdetail_post) | POST | เพิ่มorderdetail |
 | [/apiupdateorderdetail/updateorderdetail](#orderdetail_post) | POST | แก้ไขorderdetail โดยส่งรหัส orderdetail มา |
-| [/apiorderdetail/deleteorderdetail](#orderdetail_delete) | DELETE | ลบ orderdetail ตาม id การสั่งซื้อ (IDOder) |
 | [/apicustomer/insertcustomer](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก ไม่เอาละ|
 | [/apicustomer/insertcustomer2](#customer_post) | POST | เพิ่มcustomer เพิ่มลูกค้า สมัครสมาชิก |
-| [/apilistcustomer/listcustomer](#customer_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
+
 | [/apiupdatecustomer/updatecustomer](#customer_post) | POST |แก้ไข customer เพิ่มลูกค้า สมัครสมาชิก โดยส่งรหัส สามาชิก มา |
-| [/apicusaddress/listcusaddress](#cusaddress_get_by_id) | GET | แสดงข้อมุลที่อยู๋ของลูกค้า ตาม id ลูกค้า |
 | [/apiorderjing/insertorderjing](#orderjing_post) | POST | เพิ่ม order orderdetail delivery |
-| [/apiorderhistory/listorderhistory](#orderhistory_get) | GET | แสดง 1orderhistory โดยส่งรหัส ลูกค้ามา |
-| [/apitestfood22/listtestfood22/:id](#food2_get_by_id) | GET | ข้อมูลร้าน 1เมนูแนะนำ เมนูธรรมดาของร้าน รายละเอียดของแต่ละเมนู ตาม id ร้าน  |
+
 | [/apiinsertcusaddress/insertcustomeraddress](#customeraddress2_post) | POST | 1เพิ่มที่อยู่ลูกค้า |
 | [/apiinsertcusaddress/insertcustomeraddressbymap](#customeraddress_post) | POST | เพิ่มที่อยู่ลูกค้าจากการเลือกในเแผ่นที่ |
 | [/updatecusaddress/updatecustomeraddress](#customer_post) | POST |แก้ไ1ข customeraddress   โดยส่งรหัส ที่อยู่ มา |
 | [/updatecusaddress/deletecustomeraddress](#customer5_post) | POST| ลบ
-| [apilocation/listlocationall](#location_get) | GET| แสดงตำแหน้งทั้ง1หมด |
-| [apilocation/listlocationbytype](#locationbytype_get) | GET| แสดงตำแหน้ง แยะยามปนะเถทตำแหย1่ง |
-| [apideliverypro/listdeliverypro](#deliverypro_get) | GET| แสดงตำแหน้ง โแรดมชั่นการจัดส่ง|
-| [apideliverytime/listdeliverytime](#deliverytime_get) | GET| แสดงเวลาในการจัดส่ง|
-| [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
-| [/apiemproyee/empvieworder](#empvieworder_get) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
-| [/apiemproyee/empupdateorder](#empupdateorder_post) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
-| [/apitestfood22/listfoodforres/:idr&idc](#listfoodforres_get) | GET | แสดงเมนูอาหารของร้าน โดยแสกงสถานะเมนูโปรด โดยส่ง ไอดีร้าน และไอดีลูกค้า |
+
 | 
 
 <div class="page-break" />

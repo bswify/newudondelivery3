@@ -52,6 +52,7 @@
 | [/apicustomer/customerlogin](#customerlogin_post) | POST | เลูกค้าข้าสูระบบ |
 | [/apiemproyee/empvieworder](#empvieworder_get) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
 | [/apiemproyee/empupdateorder](#empupdateorder_post) | GET | ดูข้อมมูลการจัดส่ง สำหรับ พักงาน  ส่ง ไอดร พนักงานมา |
+| [/apitestfood22/listfoodforres/:idr&idc](#listfoodforres_get) | GET | แสดงเมนูอาหารของร้าน โดยแสกงสถานะเมนูโปรด โดยส่ง ไอดีร้าน และไอดีลูกค้า |
 | 
 
 <div class="page-break" />
@@ -3051,6 +3052,180 @@ http://udonfooddelivery.xyz/backend/apiemproyee/empupdateorder
 {
     "status": true,
     "data": "Update Status Order successfully."
+}
+```
+
+
+<div class="page-break" />
+
+
+<div id="listfoodforres_get">
+
+### order (GET)
+
+| Attribute   | Description             |
+| ----------- | ----------------------- |
+| URL         | /apitestfood22/listfoodforres/:idr&idc|
+| HTTP METHOD | GET                     |
+
+#### Request example
+```json
+http://udonfooddelivery.xyz/backend/apitestfood22/listfoodforres?idr=23&&idc=1
+```
+
+
+#### Response example (Success)
+```json
+{
+    "success": true,
+    "data": {
+        "restaurant": {
+            "IDRestaurant": "23",
+            "ResImg": "http://udonfooddelivery.xyz/uploads/images/Restaurantimg/27541067_861024347402237_6075913401979494982_n.jpg",
+            "ResName": "แจ่วฮ้อนเมืองอุดร",
+            "ResLowPrice": "258",
+            "ResAddress": "แยก, ทางหลวงชนบท อุดรธานี 3191 ตำบล หนองขอนกว้าง อำเภอเมืองอุดรธานี อุดรธานี 41000",
+            "ResTel": "093-321-4501",
+            "ResTimeStart": "10:00:00",
+            "ResTimeEnd": "23:00:00",
+            "latlng": "17.366185906970095,102.81580589733949",
+            "IDLocation": "2"
+        },
+        "RecommendedMenu": [
+            {
+                "menu": {
+                    "IDFood": "34",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27657222_861496397355032_6626810527092375231_n.jpg",
+                    "FoodName": "แจ่วฮ้อน  (ชุดหมู)",
+                    "FoodPrice": "259",
+                    "IDFoodType": "6",
+                    "FoodTypeName": "เมนูแกง ต้มยำ",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": true,
+                    "detailFood": []
+                }
+            },
+            {
+                "menu": {
+                    "IDFood": "35",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27655234_861496420688363_8968836187597220580_n.jpg",
+                    "FoodName": "แจ่วฮ้อน (ชุดโพนยางคำ)",
+                    "FoodPrice": "299",
+                    "IDFoodType": "8",
+                    "FoodTypeName": "เมนู ต้ม",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": false,
+                    "detailFood": []
+                }
+            },
+            {
+                "menu": {
+                    "IDFood": "36",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27654491_861496444021694_207682792096729626_n.jpg",
+                    "FoodName": "แจ่วฮ้อน (ชุดทะเล)",
+                    "FoodPrice": "379",
+                    "IDFoodType": "8",
+                    "FoodTypeName": "เมนู ต้ม",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": false,
+                    "detailFood": []
+                }
+            },
+            {
+                "menu": {
+                    "IDFood": "37",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27540288_861496464021692_2166585713836766700_n.jpg",
+                    "FoodName": "แจ่งฮ้อน (ชุดรวม)",
+                    "FoodPrice": "399",
+                    "IDFoodType": "8",
+                    "FoodTypeName": "เมนู ต้ม",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": false,
+                    "detailFood": []
+                }
+            },
+            {
+                "menu": {
+                    "IDFood": "67",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27867707_872851552886183_8148236937003520823_n.jpg",
+                    "FoodName": "น้ำสต๊อกแจ่วฮ้อน",
+                    "FoodPrice": "60",
+                    "IDFoodType": "1",
+                    "FoodTypeName": "อาหารว่าง",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": false,
+                    "detailFood": [
+                        {
+                            "IDFoodDetails": "55",
+                            "FoodDetailName": "ขวดใหญ่",
+                            "FoodDetailsPrice": "50"
+                        },
+                        {
+                            "IDFoodDetails": "117",
+                            "FoodDetailName": "ขวดกลาง",
+                            "FoodDetailsPrice": "30"
+                        }
+                    ]
+                }
+            },
+            {
+                "menu": {
+                    "IDFood": "68",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/27973117_872851556219516_7482144630501419580_n.jpg",
+                    "FoodName": "น้ำจิ้มแจ่วแบบขม",
+                    "FoodPrice": "30",
+                    "IDFoodType": "1",
+                    "FoodTypeName": "อาหารว่าง",
+                    "MenuTypeName": "เมนูแนะนำ",
+                    "IDRestaurant": "23",
+                    "StatusFoodFavorite": false,
+                    "detailFood": [
+                        {
+                            "IDFoodDetails": "56",
+                            "FoodDetailName": "ขวดใหญ่",
+                            "FoodDetailsPrice": "60"
+                        },
+                        {
+                            "IDFoodDetails": "118",
+                            "FoodDetailName": "ขวดกลาง",
+                            "FoodDetailsPrice": "30"
+                        }
+                    ]
+                }
+            }
+        ],
+        "Normalmenu": [
+            {
+                "menu": {
+                    "IDFood": "69",
+                    "FoodImg": "http://udonfooddelivery.xyz/uploads/images/Food/28166720_872851566219515_201760074857828810_n.jpg",
+                    "FoodName": "น้ำจิ้มแบบปวหวาน",
+                    "FoodPrice": "30",
+                    "IDFoodType": "9",
+                    "FoodTypeName": "ประเภทน้ำจิ้ม",
+                    "MenuTypeName": "เมนูธรรมดา",
+                    "IDRestaurant": "23",
+                    "detailFood": [
+                        {
+                            "IDFoodDetails": "57",
+                            "FoodDetailName": "ขวดใหญ่",
+                            "FoodDetailsPrice": "60"
+                        },
+                        {
+                            "IDFoodDetails": "98",
+                            "FoodDetailName": "ขวดกลาง",
+                            "FoodDetailsPrice": "25"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
 }
 ```
 

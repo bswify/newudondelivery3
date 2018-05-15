@@ -219,7 +219,7 @@ class Apitestfood22Controller extends Controller
                         "FoodTypeName" => $item1['FoodTypeName'],
                         "MenuTypeName" => $item1['MenuTypeName'],
                         "IDRestaurant" => $item1['IDRestaurant'],
-                        "StatusFoodFavorite"=> "food_favorite"
+                        "StatusFoodFavorite"=> true
                     );
             }else{
                 $data2 =
@@ -231,7 +231,8 @@ class Apitestfood22Controller extends Controller
                         "IDFoodType" => $item1['IDFoodType'],
                         "FoodTypeName" => $item1['FoodTypeName'],
                         "MenuTypeName" => $item1['MenuTypeName'],
-                        "IDRestaurant" => $item1['IDRestaurant']
+                        "IDRestaurant" => $item1['IDRestaurant'],
+                         "StatusFoodFavorite"=> false
                     );
             }
 

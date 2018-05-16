@@ -36,13 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'method' => 'post',
         ],
     ]) ?>
-    <?= Html::a('กำลังดำเนินการ', ['status2', 'id' => $model->IDOrder], [
-        'class' => 'btn btn-primary',
-        'data' => [
-            'confirm' => 'คุณแน่ใจว่าต้องการ กำลังดำเนินการ?',
-            'method' => 'post',
-        ],
-    ]) ?>
+
     <?= Html::a('กำลังจัดส่ง', ['status3', 'id' => $model->IDOrder], [
         'class' => 'btn btn-primary',
         'data' => [
@@ -57,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'method' => 'post',
         ],
     ]) ?>
-    <?= Html::a('ไม่พบผู้สั่งซื้อ', ['status5', 'id' => $model->IDOrder], [
+    <?= Html::a('ไม่พบผู้รับ', ['status5', 'id' => $model->IDOrder], [
         'class' => 'btn btn-primary',
         'data' => [
             'confirm' => 'คุณแน่ใจว่าต้องการ ไม่พบผู้สั่งซื้อ?',

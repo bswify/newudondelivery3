@@ -441,7 +441,7 @@ class OrdersController extends Controller
     {
         $model = $this->findModel($id);
 
-        $model->OrderStatus = "ไม่พบผู้สั่งซื้อ";
+        $model->OrderStatus = "ไม่พบผู้รับ";
         $searchModel = new OrderdetailsSearch();
         $dataProvider = $searchModel->search($id);
 

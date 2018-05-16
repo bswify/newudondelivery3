@@ -31,10 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= Html::a('ยืนยันการสั่งซื้อ', ['status1', 'id' => $model->IDOrder], [
         'class' => 'btn btn-primary',
-//        'data' => [
-//            'confirm' => 'คุณแน่ใจว่าต้องการ ยืนยันการสั่งซื้อ?',
-//            'method' => 'post',
-//        ],
+        'data' => [
+            'confirm' => 'คุณแน่ใจว่าต้องการ ยืนยันการสั่งซื้อ?',
+            'method' => 'post',
+        ],
     ]) ?>
     <?= Html::a('กำลังดำเนินการ', ['status2', 'id' => $model->IDOrder], [
         'class' => 'btn btn-primary',

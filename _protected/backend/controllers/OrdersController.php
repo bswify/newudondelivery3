@@ -280,36 +280,33 @@ class OrdersController extends Controller
     public function actionStatus1($id)
     {
         $model = $this->findModel($id);
-        $model->OrderStatus="ยืนยันการสั่งซื้อ";
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDOrder]);
-        }
-        return $this->render('update2', [
-//            $model->OrderStatus="ยืนยันการสั่งซื้อ",
-//            $model->save();
+
+        $model->OrderStatus = "ยืนยันการสั่งซื้อ" ;
+
+        $searchModel = new OrderdetailsSearch();
+        $dataProvider = $searchModel->search($id);
+
+//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        $model->save();
+        return $this->redirect(['view',
+            'id' => $model->IDOrder,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
             'model' => $model,
         ]);
 
-//        $searchModel = new OrderdetailsSearch();
-//        $dataProvider = $searchModel->search($id);
+//        $model->attributes = \Yii::$app->request->post();
 //
-//        $model->OrderStatus = "ยืนยันการสั่งซื้อ";
-////        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-//        $model->save();
-//        return $this->redirect(['view',
-//            'id' => $model->IDOrder,
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
+//        if ($model->load(Yii::$app->request->post()) ) {
+//            $model->OrderStatus = "ยืนยันการสั่งซื้อ" ;
+//            $model->save();
+//            return $this->redirect(['view', 'id' => $model->IDOrder]);
+//        }
+//        return $this->render('update2', [
 //            'model' => $model,
 //        ]);
-//        }
-//        else{
-//            return $this->render('view', [
-//                'model' => $model,
-//                'searchModel' => $searchModel,
-//                'dataProvider' => $dataProvider,
-//            ]);
-//        }
+
+
     }
 
     public function actionStatus2($id)

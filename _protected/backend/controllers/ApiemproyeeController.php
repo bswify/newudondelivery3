@@ -298,8 +298,8 @@ class ApiemproyeeController extends Controller
         $status =  Yii::$app->request->getBodyParam('status');
         $idorder =  Yii::$app->request->getBodyParam('idorder');
 
-        $model = Orders::find($idorder)->all();
-        $model->attributes = \Yii::$app->request->post();
+        $model = Orders::findOne($idorder);
+
         if($model !== null){
             $model->OrderStatus = $status;
             $model->save();

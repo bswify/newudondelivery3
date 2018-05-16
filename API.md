@@ -2539,7 +2539,7 @@ http://udonfooddelivery.xyz/backend/apiorderr/insertorderr
 <div class="page-break" />
 
 
-<div id="locationbytype_get">
+<div id="orderhistory_get">
 
 ### order (GET)
 

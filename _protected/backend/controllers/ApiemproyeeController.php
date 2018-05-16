@@ -5,6 +5,8 @@ namespace backend\controllers;
 use backend\models\Customer;
 use backend\models\Employee;
 use backend\models\Favoritemenu;
+use backend\models\Location;
+use backend\models\Locationtype;
 use backend\models\Orderdetails;
 use backend\models\Orders;
 use Mpdf\Tag\Q;
@@ -188,6 +190,7 @@ class ApiemproyeeController extends Controller
             ->join('INNER JOIN','customer','orders.IDCustomer = customer.IDCustomer')
             ->join('INNER JOIN','employee','orders.IDEmp = employee.IDEmp')
             ->join('INNER JOIN','customeraddress','orders.IDCustomerAddress = customeraddress.IDCustomerAddress')
+
             ->where('orders.IDEmp ='.$id)
             ->andWhere('orders.OrderStatus != "รอการยืนยัน"')
             ->andWhere('orders.OrderStatus != "จัดส่งแล้ว"')
@@ -197,6 +200,17 @@ class ApiemproyeeController extends Controller
         $do = $com->queryAll();
 
             foreach ($do as $item){
+
+                $loca = Location::find()->where('LocationName = "'.$item['CustomerAddRoad'].'"')->one();
+
+                if($loca !== null){
+                    $loca2 = Locationtype::findOne($loca->IDLocationType);
+                    $loo = $loca2->LocationTypeName;
+                }else{
+                    $loo = "เลือกจากแผ่นที่";
+                }
+
+
                 $orderd = new Query();
                 $data = array(
                     "IDOrder" => $item['IDOrder'],
@@ -215,7 +229,7 @@ class ApiemproyeeController extends Controller
                     "EmpLname"=>$item['EmpLname'],
                     "IDCustomerAddress"=>$item['IDCustomerAddress'],
                     "CustomerAddNo"=> $item['CustomerAddNo'],
-                    "CustomerAddRoad"=>$item['CustomerAddRoad'],
+                    "CustomerAddRoad"=> $loo." ".$item['CustomerAddRoad'],
                     "map"=>$item['map'],
                     "Orderpayprice"=>$item['Orderpayprice']
                 );

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use backend\models\Customer;
 use backend\models\Employee;
 use backend\models\Favoritemenu;
+use backend\models\Fooddetails;
 use backend\models\Location;
 use backend\models\Locationtype;
 use backend\models\Orderdetails;
@@ -238,6 +239,7 @@ class ApiemproyeeController extends Controller
                     ->from('orderdetails')
                     ->join('INNER JOIN','food','orderdetails.IDFood = food.IDFood')
                     ->join('INNER JOIN','restaurant','food.IDRestaurant = restaurant.IDRestaurant')
+
                     ->where('IDOrder = '.$item['IDOrder'])
 
                     ;
@@ -245,6 +247,15 @@ class ApiemproyeeController extends Controller
                 $orderd1 = $com1->queryAll();
 
                 foreach ($orderd1 as $item1){
+
+                    $pl = Fooddetails::findOne($item1['IDFoodDetails']);
+                    if($pl !== null){
+                        $fdn = $pl->FoodDetailName;
+                        $fdp = $pl->FoodDetailsPrice;
+                    }else{
+                        $fdn = null;
+                        $fdp = null;
+                    }
                     $dataoderd = array(
                         "IDOrderDetails"=>$item1['IDOrderDetails'],
                         "IDFood"=>$item1['IDFood'],
@@ -259,6 +270,8 @@ class ApiemproyeeController extends Controller
                         "AmountFood"=>$item1['AmountFood'],
                         "IDOrder"=>$item1['IDOrder'],
                         "reason"=>$item1['reason'],
+                        "FoodDetailName"=> $fdn,
+                        "FoodDetailsPrice"=> $fdp,
 
 
                     );

@@ -34,7 +34,7 @@
 | [/apifavoritemenu/listfavoritemenu/:id](#favoritemenu_get_by_id) | GET | แสดงเมนูโปรด ตาม id ลูกค้า  |
 | [/apiorder/listorder](#order_get) | GET | ข้อมูลการสั่งซื้ออาหาร |
 | [/apicusaddress/listcusaddress](#cusaddress_get_by_id) | GET | แสดงข้อมุลที่อยู๋ของลูกค้า ตาม id ลูกค้า |
-| [/apilistcustomer/listcustomer](#customer_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
+| [/apilistcustomer/listcustomer](#customer2_post) | GET | แสดงข้อมูลลูกค้า โดยส่งไอดีมา |
 | [/apifavoritemenu/deletefavoritemenu/:id](#favoritemenu_delete) | DELETE | ลบเมนูโปรด ตาม id เมนูโปรด |
 | [/apiorder/deleteorder](#order_delete) | DELETE | ลบorder ตาม id กการั่งซื้อ |
 | [/apiorderdetail/deleteorderdetail](#orderdetail_delete) | DELETE | ลบ orderdetail ตาม id การสั่งซื้อ (IDOder) |
@@ -1573,7 +1573,7 @@ http://udonfooddelivery.xyz/backend/apicustomer/insertcustomer
 <div class="page-break" />
 
 
-<div id="cusaddress5_get">
+<div id="cusaddress_get_by_id">
 
 ### order (GET)
 
@@ -2369,7 +2369,7 @@ http://udonfooddelivery.xyz/backend/apideliverypro/listdeliverypro
 <div class="page-break" />
 
 
-<div id="locationbytype_get">
+<div id="deliverytime_get">
 
 ### order (GET)
 
@@ -2622,7 +2622,7 @@ FoodDetailsPrice: "10"
 <div class="page-break" />
 
 
-<div id="cusaddress_get">
+<div id="customer2_post">
 
 ### order (GET)
 
@@ -3033,7 +3033,7 @@ http://udonfooddelivery.xyz/backend/apiemproyee/empvieworder?id=1
 <div class="page-break" />
 
 
-<div id="empvieworder_get">
+<div id="empupdateorder_post">
 
 ### order (GET)
 

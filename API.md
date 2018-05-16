@@ -3047,6 +3047,14 @@ http://udonfooddelivery.xyz/backend/apiemproyee/empvieworder?id=1
 http://udonfooddelivery.xyz/backend/apiemproyee/empupdateorder
 ```
 
+#### Request example (Success)
+```json
+{
+	"status": "จัดส่งแล้ว",
+	"idorder" : "36"
+}
+```
+
 
 #### Response example (Success)
 ```json

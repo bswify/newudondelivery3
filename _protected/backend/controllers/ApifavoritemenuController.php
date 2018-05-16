@@ -134,7 +134,9 @@ class ApifavoritemenuController extends Controller
 
         $sql3 = new Query();
 
+        $qa = array();
         $data3 = array();
+        $detal = array();
 
         $sql1->select('restaurant.IDRestaurant')->distinct()->from('favoritemenu')
             ->join('INNER JOIN', 'food', 'food.IDFood = favoritemenu.IDFood')
@@ -142,25 +144,71 @@ class ApifavoritemenuController extends Controller
             ->where('favoritemenu.IDCustomer =' . $id);
         $command = $sql1->createCommand();
         $data = $command->queryAll();
-
+        $dateNow = date('Y-m-d');
         foreach ($data as $item){
 
+            $sd = new Query();
+            $sd->select('*')->from('respromotion')->where('IDRestaurant = '.$item['IDRestaurant'])
+                ->andFilterWhere(['<=', 'ResPromotionStart', $dateNow])
+                ->andFilterWhere(['>=', 'ResPromotionEnd', $dateNow])
+            ;
+            $comsd = $sd->createCommand();
+            $datasd = $comsd->queryAll();
+            if(count($datasd) > 0){
+                foreach ($datasd as $itemsd){
+                    $datapro =
+                        array(
+                            "IDResPromotion"=>$itemsd['IDResPromotion'],
+                            "ResPromotionName"=>$itemsd['ResPromotionName'],
+                        );
+                    $qa[]= $datapro;
+                }
+            }else{
+                $qa = null;
+            }
 
-            $sql3->select(['IDRestaurant',
-                'CONCAT( \'http://udonfooddelivery.xyz/uploads/images/Restaurantimg/\' , ResImg ) as ResImg',
-                'ResName',
-                'ResLowPrice',
-                'ResAddress',
-                'ResTel',
-                'ResTimeStart',
-                'ResTimeEnd',
-                'latlng',
-                'IDLocation'
-            ])
-                ->from('restaurant')
-                ->where('IDRestaurant = ' . $item['IDRestaurant']);
-            $cm =$sql3->createCommand();
-            $d =$cm->queryAll();
+
+            $sql65 = new  Query;
+
+            $sql65->select('*')->from('restaurant')->where('ResStatus ='.' "อนุมัติ" ')
+                ->andWhere('IDRestaurant = '.$item['IDRestaurant'])
+            ;
+            $command65 = $sql65->createCommand();
+            $data65 = $command65->queryAll();
+
+            foreach ($data65 as $item65){
+                $datares =
+                    array(
+                        "IDRestaurant"=>$item65['IDRestaurant'],
+                        "ResName"=>$item65['ResName'],
+                        "ResAddress"=> $item65['ResAddress'],
+                        "ResStatus"=>$item65['ResStatus'],
+                        "ResTel"=> $item65['ResTel'],
+                        "ResTimeStart"=> $item65['ResTimeStart'],
+                        "ResTimeEnd"=>$item65['ResTimeEnd'],
+                        "IDLocation"=> $item65['IDLocation'],
+                        "ResLowPrice"=>$item65['ResLowPrice'],
+                        "latlng"=>$item65['latlng'],
+                        "ResImg"=>"http://udonfooddelivery.xyz/uploads/images/Restaurantimg/".$item65['ResImg'],
+                        "Respro"=>$qa
+                    );
+            }
+
+//            $sql3->select(['IDRestaurant',
+//                'CONCAT( \'http://udonfooddelivery.xyz/uploads/images/Restaurantimg/\' , ResImg ) as ResImg',
+//                'ResName',
+//                'ResLowPrice',
+//                'ResAddress',
+//                'ResTel',
+//                'ResTimeStart',
+//                'ResTimeEnd',
+//                'latlng',
+//                'IDLocation'
+//            ])
+//                ->from('restaurant')
+//                ->where('IDRestaurant = ' . $item['IDRestaurant']);
+//            $cm =$sql3->createCommand();
+//            $d =$cm->queryAll();
 
 
 
@@ -175,6 +223,24 @@ class ApifavoritemenuController extends Controller
             $command11 = $sql2->createCommand();
             $data11 = $command11->queryAll();
             foreach ($data11 as $item1) {
+                $sql12 = new Query();
+                $sql12->select('*')->from('fooddetails')->where('IDFood = '.$item1['IDFood']);
+                $command5 = $sql12->createCommand();
+                $data12 = $command5->queryAll();
+                if($data12 !== null){
+                    foreach ($data12 as $item12){
+                        $dade = array(
+                            "IDFoodDetails" => $item12['IDFoodDetails'],
+                            "FoodDetailName" => $item12['FoodDetailName'],
+                            "FoodDetailsPrice" => $item12['FoodDetailsPrice']
+                        );
+                        $detal[] = $dade;
+
+                    }
+                }else{
+                    $detal =null;
+                }
+
                 $data2 =
                     array(
                         "IDFavoriteManu" => $item1['IDFavoriteManu'],
@@ -187,12 +253,21 @@ class ApifavoritemenuController extends Controller
                         "MenuTypeName" => $item1['MenuTypeName'],
                         "IDCustomer" => $item1['IDCustomer'],
                         "CustomerFName" => $item1['CustomerFName'],
-                        "CustomerLName" => $item1['CustomerLName']
+                        "CustomerLName" => $item1['CustomerLName'],
+                        'detailfood'=>$detal
                     );
+
+
+
+
+//                $dq = array('favoritefood' => $data2,'detailfood'=>$detal);
+                $detal =null;
+
                 $data3[] = $data2;
             }
 
-            $dataa = array('res'=>$d,'favoritefood'=>$data3);
+
+            $dataa = array('res'=>$datares,'food'=>$data3);
             $data3 =null;
             $re[]=$dataa;
         }

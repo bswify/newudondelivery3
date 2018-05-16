@@ -90,7 +90,7 @@ class ApiorderrController extends Controller
             $order->OrderStatus = ''.'รอการยืนยัน';
             $order->IDPaymant = $request->getBodyParam('mPaymentType');
             $order->IDCustomer = $request->getBodyParam('mCustomerId');
-            $order->Orderpayprice = $request->getBodyParam('mPay'." ");
+            $order->Orderpayprice = $request->getBodyParam('mPay')."";
 
             $idcusaddress = $request->getBodyParam('address');
 //

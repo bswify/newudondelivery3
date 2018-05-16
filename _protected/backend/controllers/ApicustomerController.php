@@ -173,7 +173,7 @@ class ApicustomerController extends Controller
                         );
                     $sql3->select('*')->from('customeraddress')
                         ->where('IDCustomer =' . $item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
-                    ->andWhere('status = "1"');
+                    ->andWhere('statusa = "1"');
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
                     $d = array('name' => $data2, 'address' => $data13);
@@ -187,9 +187,9 @@ class ApicustomerController extends Controller
 
         }
         else{
-            $model = Customer::find()->where(['CUsername' => $username])->andWhere(['CPasswords' => $pass]) ->one();
-            $model2 = Employee::find()->where(['EUsername' => $username])->andWhere(['Epasswords' => $pass]) ->one();
-            if($model !== null){
+            $model = Customer::find()->where(['CUsername' => $username])->one();
+            $model2 = Employee::find()->where(['EUsername' => $username])->one();
+            if($model !== null ){
                 $sql2 = new Query;
                 $sql3 = new Query;
                 $data3 = array();
@@ -217,8 +217,10 @@ class ApicustomerController extends Controller
 
                         );
                     $sql3->select('*')->from('customeraddress')
-                        ->where('IDCustomer ='.$item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
-                        ->andWhere('status = "1"');
+                        ->where('IDCustomer ='.$item1['IDCustomer'])
+                        ->andWhere('CustomerAddNo != "null"')
+                        ->andWhere('statusa = 1')
+                    ;
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
                     $d = array('name'=>$data2,'address'=>$data13);
@@ -227,23 +229,35 @@ class ApicustomerController extends Controller
                 return array('success' => true, 'data' => $data3);
 
             }
-            else if ($model2 !== null && $model == null){
+            else if ($model2 !== null ){
 
+                $sql2 = new Query();
+                $sql2->select('*')->from('employee')
+                    ->where('EUsername = "'.$username.'"');
+                $command11 = $sql2->createCommand();
+                $data11 = $command11->queryAll();
 
-                foreach ($model2 as $item) {
+                foreach ($data11 as $item) {
                     $data2 =
                         array(
-                            "IDEmp" => $item['IDEmp'],
-                            "EmpFName" => $item['EmpFName'],
-                            "EmpLname" => $item['EmpLname'],
-                            "EmpPhone"=>$item['EmpPhone'],
-                            "EUsername"=> $item['EUsername'],
-                            "Epasswords"=>$item['Epasswords'],
-                            "LoginType"=>$item['LoginType']
+                            "IDCustomer" => $item['IDEmp'],
+                            "CustomerFName" => $item['EmpFName'],
+                            "CustomerLName" => $item['EmpLname'],
+                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/1.jpg",
+                            "CustomerPoint" => 0,
+                            "CustomerPhone"=>$item['EmpPhone'],
+                            "CUsername"=> $item['EUsername'],
+                            "CPasswords"=>$item['Epasswords'],
+                            "LoginType"=>$item['LoginType'],
+                            "email" => null,
+                            "iduserface" => null,
+                            "token" => null
                         );
+                    $d = array('name'=>$data2,'address'=>null);
+                    $data3[] = $d;
 
                 }
-                return array('success' => true, 'data' => $data2);
+                return array('success' => true, 'data' => $data3);
 
             }
             else{
@@ -358,27 +372,26 @@ class ApicustomerController extends Controller
                     ->where('CUsername = "'.$username.'"');
                 $command11 = $sql2->createCommand();
                 $data11 = $command11->queryAll();
-                foreach ($data11 as $item1) {
+                foreach ($data11 as $item11) {
                     $data2 =
                         array(
-                            "IDCustomer" => $item1['IDCustomer'],
-                            "CustomerFName" => $item1['CustomerFName'],
-
-                            "CustomerLName" => $item1['CustomerLName'],
-                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/images/Customer/".$item1['CustomerImage'],
-                            "CustomerPoint" => $item1['CustomerPoint'],
-                            "CustomerPhone" => $item1['CustomerPhone'],
-                            "CUsername" => $item1['CUsername'],
-                            "CPasswords" => $item1['CPasswords'],
-                            "LoginType" => $item1['LoginType'],
-                            "email" => $item1['email'],
-                            "iduserface" => $item1['iduserface'],
-                            "token" => $item1['token']
+                            "IDCustomer" => $item11['IDCustomer'],
+                            "CustomerFName" => $item11['CustomerFName'],
+                            "CustomerLName" => $item11['CustomerLName'],
+                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/images/Customer/".$item11['CustomerImage'],
+                            "CustomerPoint" => $item11['CustomerPoint'],
+                            "CustomerPhone" => $item11['CustomerPhone'],
+                            "CUsername" => $item11['CUsername'],
+                            "CPasswords" => $item11['CPasswords'],
+                            "LoginType" => $item11['LoginType'],
+                            "email" => $item11['email'],
+                            "iduserface" => $item11['iduserface'],
+                            "token" => $item11['token']
 
 
                         );
                     $sql3->select('*')->from('customeraddress')
-                        ->where('IDCustomer ='.$item1['IDCustomer'])->andWhere('CustomerAddNo != "null"')
+                        ->where('IDCustomer ='.$item11['IDCustomer'])->andWhere('CustomerAddNo != "null"')
                         ->andWhere('status = "1"');
                     $command12 = $sql3->createCommand();
                     $data13 = $command12->queryAll();
@@ -393,17 +406,24 @@ class ApicustomerController extends Controller
                 foreach ($model2 as $item) {
                     $data2 =
                         array(
-                            "IDEmp" => $item['IDEmp'],
-                            "EmpFName" => $item['EmpFName'],
-                            "EmpLname" => $item['EmpLname'],
-                            "EmpPhone"=>$item['EmpPhone'],
-                            "EUsername"=> $item['EUsername'],
-                            "Epasswords"=>$item['Epasswords'],
-                            "LoginType"=>$item['LoginType']
+                            "IDCustomer" => $item['IDEmp'],
+                            "CustomerFName" => $item['EmpFName'],
+                            "CustomerLName" => $item['EmpLname'],
+                            "CustomerImage" => "http://udonfooddelivery.xyz/uploads/1.jpg",
+                            "CustomerPoint" => 0,
+                            "CustomerPhone"=>$item['EmpPhone'],
+                            "CUsername"=> $item['EUsername'],
+                            "CPasswords"=>$item['Epasswords'],
+                            "LoginType"=>$item['LoginType'],
+                            "email" => null,
+                            "iduserface" => null,
+                            "token" => null
                         );
+                    $d = array('name'=>$data2,'address'=>null);
+                    $data3[] = $d;
 
                 }
-                return array('success' => true, 'data' => $data2);
+                return array('success' => true, 'data' => $data3);
 
             }
             else{

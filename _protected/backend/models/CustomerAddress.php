@@ -32,7 +32,7 @@ class CustomerAddress extends \yii\db\ActiveRecord
         return [
             [['IDCustomer'], 'required'],
             [['CustomerAddNo', 'IDCustomer'], 'integer'],
-            [['CustomerAddRoad','map','status'], 'string'],
+            [['CustomerAddRoad','map','statusa'], 'string'],
 //            [['IDCustomer'], 'unique'],
             [['IDCustomer'], 'exist', 'skipOnError' => true, 'targetClass' => Customer::className(), 'targetAttribute' => ['IDCustomer' => 'IDCustomer']],
         ];

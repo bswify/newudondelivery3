@@ -69,7 +69,7 @@ class ApirestaurantController extends Controller
         $dateNow = date('Y-m-d');
         $sql = new  Query;
 
-        $sql->select('*')->from('restaurant')->where('ResStatus ='.' "อนุมัติ" ');;
+        $sql->select('*')->from('restaurant')->where('ResStatus ='.' "อนุมัติ" ');
         $command = $sql->createCommand();
         $data = $command->queryAll();
         foreach ($data as $item){

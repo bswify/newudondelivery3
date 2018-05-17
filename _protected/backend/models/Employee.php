@@ -32,7 +32,7 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             [['EmpFName', 'EmpLname', 'EmpPhone', 'EUsername', 'Epasswords', 'LoginType'], 'required'],
-            [['EmpFName', 'EmpLname', 'EmpPhone','EUsername', 'Epasswords', 'LoginType'], 'string'],
+            [['IDEmp','EmpFName', 'EmpLname', 'EmpPhone','EUsername', 'Epasswords', 'LoginType'], 'string'],
 
         ];
     }

@@ -81,7 +81,7 @@ class ApiupdatecusaddressController extends Controller
         $cusadd->attributes = \Yii::$app->request->post();
 
 //            $cusadd->attributes = \Yii::$app->request->post();
-            $cusadd->status = "0";
+            $cusadd->statusa = "0";
             $cusadd->save();
 
             return array('status' => true, 'data' => 'CustomerAddress delete successfully.');

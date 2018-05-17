@@ -281,12 +281,13 @@ class OrdersController extends Controller
     {
         $model = $this->findModel($id);
 
-        $model->OrderStatus = "ยืนยันการสั่งซื้อ" ;
+
 
         $searchModel = new OrderdetailsSearch();
         $dataProvider = $searchModel->search($id);
 
 //        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        $model->OrderStatus = "ยืนยันการสั่งซื้อ" ;
         $model->save();
         return $this->redirect(['view',
             'id' => $model->IDOrder,

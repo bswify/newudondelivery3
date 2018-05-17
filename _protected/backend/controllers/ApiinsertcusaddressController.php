@@ -66,7 +66,7 @@ class ApiinsertcusaddressController extends Controller
 //            $cusadd->IDCustomerAddRoad = $request->getBodyParam('IDCustomerAddRoad');
             $cusadd->map = $lo->letlng;
             $cusadd->IDCustomer = $request->getBodyParam('IDCustomer');
-            $cusadd->status = "1";
+            $cusadd->statusa = "1";
 
             if ($cusadd->validate()) {
                 $cusadd->save();
@@ -95,6 +95,7 @@ class ApiinsertcusaddressController extends Controller
 //            $cusadd->CustomerAddRoad = "-";
             $cusadd->map = $request->getBodyParam('map');
             $cusadd->IDCustomer = $request->getBodyParam('IDCustomer');
+            $cusadd->statusa = "1";
 
             if ($cusadd->validate()) {
                 $cusadd->save();

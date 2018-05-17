@@ -189,13 +189,13 @@ class ApiemproyeeController extends Controller
             ->from('orders')
             ->join('INNER JOIN','payment','orders.IDPaymant = payment.IDPaymant')
             ->join('INNER JOIN','customer','orders.IDCustomer = customer.IDCustomer')
-            ->join('INNER JOIN','employee','orders.IDEmp = employee.IDEmp')
+            ->join('INNER JOIN','employee','orders.IDEmp =  employee.IDEmp ')
             ->join('INNER JOIN','customeraddress','orders.IDCustomerAddress = customeraddress.IDCustomerAddress')
 
-            ->where('orders.IDEmp ='.$id)
+            ->where('orders.IDEmp = "'.$id.'"')
             ->andWhere('orders.OrderStatus != "รอการยืนยัน"')
             ->andWhere('orders.OrderStatus != "จัดส่งแล้ว"')
-            ->andWhere('orders.OrderStatus != "ไม่พบผู้สั่งซื้อ"')
+            ->andWhere('orders.OrderStatus != "ไม่พบผู้รับ"')
         ;
         $com = $order->createCommand();
         $do = $com->queryAll();
@@ -303,9 +303,9 @@ class ApiemproyeeController extends Controller
         if($model !== null){
             $model->OrderStatus = $status;
             $model->save();
-            return array('success' => true, 'data' => "Update Status Order successfully.");
+            return array('status' => true, 'data' => "Update Status Order successfully.");
         }else{
-            return array('success' => true, 'data' => "Can not Update Status Order.");
+            return array('status' => true, 'data' => "Can not Update Status Order.");
         }
 
 

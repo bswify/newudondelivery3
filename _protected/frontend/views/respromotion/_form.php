@@ -49,8 +49,8 @@ HTML;
     <?php
 
     echo '<h5><b>วันที่เริ่มต้น - สิ้นสุด</b></h5>';
-    $model->ResPromotionStart = date('Y-m-d');
-    $model->ResPromotionEnd = date('Y-m-d');
+    $model->ResPromotionStart = date('Y-m-d');//ตัวแปลวันที่เริ่มต้น
+    $model->ResPromotionEnd = date('Y-m-d');//ตัวแปลวันที่เข้าพัก
 //    $form->field($model, 'kvdate1');
     echo '<div class="input-group drp-container">';
         echo DateRangePicker::widget([

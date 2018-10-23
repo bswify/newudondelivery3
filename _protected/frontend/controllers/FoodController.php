@@ -143,18 +143,9 @@ class FoodController extends Controller
 
         $food->IDRestaurant = $resID;
 
-
-
-//        $foodDetail = $fooddetails[0];
-
-
         if ($food->load(Yii::$app->request->post()) && $food->validate()) {
              $food->FoodImg = $food->upload($food, 'FoodImg');
             $food->save();
-//            $foodDetail->IDFood = $food->IDFood;
-
-//            if ($foodDetail->load(Yii::$app->request->post()) && $foodDetail->save()) {
-
                 Yii::$app->session->setFlash('success', 'เพิ่มข้อมูลเรียบร้อยแล้ว');
                 return $this->redirect(['view', 'id' => $food->IDFood]);
 

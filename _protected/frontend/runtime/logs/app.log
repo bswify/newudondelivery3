@@ -44854,3 +44854,151 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1526096364.633
     'REQUEST_TIME' => 1526096364
 ]
+2018-07-17 18:24:25 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'app' does not exist: C:\xampp\htdocs\newudondelivery3\_protected\common/translations/th_TH/app.php Fallback file does not exist as well: C:\xampp\htdocs\newudondelivery3\_protected\common/translations/th/app.php
+    in C:\xampp\htdocs\newudondelivery3\_protected\frontend\views\site\index.php:199
+    in C:\xampp\htdocs\newudondelivery3\_protected\frontend\controllers\SiteController.php:91
+2018-07-17 18:24:28 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'u158844042_udon' in C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php:686
+Stack trace:
+#0 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(686): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(612): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(995): yii\db\Connection->open()
+#3 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(982): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(880): yii\db\Schema->quoteValue('t81nt5i8oe219dg...')
+#6 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(209): yii\db\Connection->quoteValue('t81nt5i8oe219dg...')
+#7 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(1096): yii\db\Command->getRawSql()
+#8 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(1117): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(422): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Query.php(291): yii\db\Command->queryScalar()
+#11 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('t81nt5i8oe219dg...')
+#13 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(137): session_start()
+#14 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(610): yii\web\Session->open()
+#15 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(749): yii\web\Session->get('__flash', Array)
+#16 C:\xampp\htdocs\newudondelivery3\_protected\vendor\dmstr\yii2-adminlte-asset\widgets\Alert.php(83): yii\web\Session->getAllFlashes()
+#17 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\BaseObject.php(109): dmstr\widgets\Alert->init()
+#18 [internal function]: yii\base\BaseObject->__construct(Array)
+#19 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#20 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('dmstr\\widgets\\A...', Array, Array)
+#21 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('dmstr\\widgets\\A...', Array, Array)
+#22 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Widget.php(137): yii\BaseYii::createObject(Array)
+#23 C:\xampp\htdocs\newudondelivery3\_protected\frontend\views\layouts\content.php(33): yii\base\Widget::widget()
+#24 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(336): require('C:\\xampp\\htdocs...')
+#25 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#26 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#27 C:\xampp\htdocs\newudondelivery3\_protected\frontend\views\layouts\main.php(74): yii\base\View->render('content.php', Array)
+#28 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(336): require('C:\\xampp\\htdocs...')
+#29 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#30 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#31 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div style="dis...')
+#32 C:\xampp\htdocs\newudondelivery3\_protected\frontend\controllers\SiteController.php(91): yii\base\Controller->render('index')
+#33 [internal function]: frontend\controllers\SiteController->actionIndex()
+#34 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#35 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#36 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#37 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#38 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#39 C:\xampp\htdocs\newudondelivery3\index.php(18): yii\base\Application->run()
+#40 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'u158844042_udon' in C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php:623
+Stack trace:
+#0 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(995): yii\db\Connection->open()
+#1 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(982): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Connection.php(880): yii\db\Schema->quoteValue('t81nt5i8oe219dg...')
+#4 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(209): yii\db\Connection->quoteValue('t81nt5i8oe219dg...')
+#5 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(1096): yii\db\Command->getRawSql()
+#6 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(1117): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Command.php(422): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\db\Query.php(291): yii\db\Command->queryScalar()
+#9 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\DbSession.php(156): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('t81nt5i8oe219dg...')
+#11 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(137): session_start()
+#12 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(610): yii\web\Session->open()
+#13 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Session.php(749): yii\web\Session->get('__flash', Array)
+#14 C:\xampp\htdocs\newudondelivery3\_protected\vendor\dmstr\yii2-adminlte-asset\widgets\Alert.php(83): yii\web\Session->getAllFlashes()
+#15 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\BaseObject.php(109): dmstr\widgets\Alert->init()
+#16 [internal function]: yii\base\BaseObject->__construct(Array)
+#17 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#18 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('dmstr\\widgets\\A...', Array, Array)
+#19 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('dmstr\\widgets\\A...', Array, Array)
+#20 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Widget.php(137): yii\BaseYii::createObject(Array)
+#21 C:\xampp\htdocs\newudondelivery3\_protected\frontend\views\layouts\content.php(33): yii\base\Widget::widget()
+#22 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(336): require('C:\\xampp\\htdocs...')
+#23 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#24 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, NULL)
+#25 C:\xampp\htdocs\newudondelivery3\_protected\frontend\views\layouts\main.php(74): yii\base\View->render('content.php', Array)
+#26 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(336): require('C:\\xampp\\htdocs...')
+#27 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', '[<span class="s...')
+#28 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#29 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div style="dis...')
+#30 C:\xampp\htdocs\newudondelivery3\_protected\frontend\controllers\SiteController.php(91): yii\base\Controller->render('index')
+#31 [internal function]: frontend\controllers\SiteController->actionIndex()
+#32 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#33 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#34 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#35 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#36 C:\xampp\htdocs\newudondelivery3\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#37 C:\xampp\htdocs\newudondelivery3\index.php(18): yii\base\Application->run()
+#38 {main}
+Additional Information:
+
+2018-07-17 18:24:23 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => '8a8e538df96df618158103a2dcb959a89ab4eef029849c71ea3069f98a8f6756a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[6,\"G2EzBIi7_oUMriGcZsG9HtX--SQB3zzv\",2592000]\";}'
+    'IRESORTFRONTENDSESSION' => 'jhqsrgc8rrp50cb329nkcvc8op'
+    '_csrf' => '0c7b362353ac29e3e69603e50e6caa1cf8617906603748e1f23012a0f1449571a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"djae_svsv_ty7xQjLO5zqdISwX2Ep-gX\";}'
+]
+
+$_SESSION = []
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.9'
+    'HTTP_COOKIE' => '_identity=8a8e538df96df618158103a2dcb959a89ab4eef029849c71ea3069f98a8f6756a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22G2EzBIi7_oUMriGcZsG9HtX--SQB3zzv%22%2C2592000%5D%22%3B%7D; IRESORTFRONTENDSESSION=jhqsrgc8rrp50cb329nkcvc8op; _csrf=0c7b362353ac29e3e69603e50e6caa1cf8617906603748e1f23012a0f1449571a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22djae_svsv_ty7xQjLO5zqdISwX2Ep-gX%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\noppa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\noppa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\noppa\\AppData\\Local\\GitHubDesktop\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/newudondelivery3/index.php'
+    'REMOTE_PORT' => '52696'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/newudondelivery3/'
+    'SCRIPT_NAME' => '/newudondelivery3/index.php'
+    'PHP_SELF' => '/newudondelivery3/index.php'
+    'REQUEST_TIME_FLOAT' => 1531844662.445
+    'REQUEST_TIME' => 1531844662
+]

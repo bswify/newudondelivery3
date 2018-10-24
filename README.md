@@ -1,7 +1,6 @@
-# newudondelivery3
 
-# resort
-i-resort management
+# newudondelivery3
+newudondelivery3 management
 
 ## How to Run Project
  1. run composer update 
@@ -13,22 +12,29 @@ i-resort management
  3. coppy setting to config
     - coppy below code to **_protected/common/config/param-local**
  ``` php 
- <?php
+<?php
 Yii::setAlias('@uploadUrl','/uploads/');//for show
-Yii::setAlias('@ShowUde','@appRoot3/uploads/logo1.png'); //โชว์ user แบบ pยังไม่ได้login
-Yii::setAlias('@ShowPhotoAdmin','@appRoot3/uploads/img/man.png');
 
-Yii::setAlias('@UploadUser','@appRoot2/uploads/images/users/'); //อัพ user
-Yii::setAlias('@ShowU','@appRoot3/uploads/images/users/');//โชว์ user
+Yii::setAlias('@UploadFoodPhoto','@appRoot2/uploads/images/Food/');//for upload อาหาร
+Yii::setAlias('@ShowFoodPhoto','@appRoot3/uploads/images/Food/');//for show อาหาร
 
-Yii::setAlias('@UploadRoom','@appRoot2/uploads/images/room/');//อัพ oom
-Yii::setAlias('@ShowR','@appRoot3/uploads/images/room/');//โชว์ room
+Yii::setAlias('@UploadResReview','@appRoot2/uploads/images/Resreview/');//for upload รีวิว
+Yii::setAlias('@ShowResReview','@appRoot3/uploads/images/Resreview/');//for show รีวิว
 
 
-Yii::setAlias('@UploadNews','@appRoot2/uploads/images/news/'); // อัพ news
-Yii::setAlias('@ShowN','@appRoot3/uploads/images/news/');//โชว์ news
+Yii::setAlias('@UploadRes','@appRoot2/uploads/images/Restaurantimg/');//for upload ร้านอาหาร
+Yii::setAlias('@ShowRes','@appRoot3/uploads/images/Restaurantimg/');//for show ร้านอาหาร
+
+Yii::setAlias('@UploadCus','@appRoot2/uploads/images/Customer/');//for upload ลูกค้า
+Yii::setAlias('@ShowCus','@appRoot3/uploads/images/Customer/');//for show ลูกค้า
+
+Yii::setAlias('@ShowPhotoAdmin','@appRoot3/uploads/img/man.png');//for show ลูกค้า
+
+Yii::setAlias('@ShowimgF','@appRoot3/uploads/cutlery.png');//for show ร้านอาหาร
+
 return [
-]; 
+];
+
 ``` 
 
 
